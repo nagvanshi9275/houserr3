@@ -10,7 +10,7 @@ function App() {
   const [fruits, setFruits] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/fruit')
+    fetch('http://localhost:4000/fruit')
       .then(response => response.json())
       .then(data => setFruits(data))
       .catch(error => console.error('Error fetching fruits:', error));

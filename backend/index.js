@@ -4,6 +4,12 @@ import express from 'express';
 import cors from 'cors';
 
 
+import Connect_db from './database/data.js';
+
+import 'dotenv/config';
+
+
+
 const app = express();
 const port = 4000;
 
@@ -18,6 +24,8 @@ app.get('/', (req, res) => {
 
 const fruit = ["apple", "grapes", "orbhi"]
 
+
+Connect_db()
 
 app.get('/fruit', (req, res) => {
 
@@ -35,7 +43,7 @@ app.listen(port, () => {
 
 
 
-
+//Srinivas@2005
 
 
 
