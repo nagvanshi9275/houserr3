@@ -8,7 +8,7 @@ import Connect_db from './database/data.js';
 
 import 'dotenv/config';
 
-
+import router from './Routes/user.routes.js';
 
 const app = express();
 const port = 4000;
@@ -16,6 +16,9 @@ const port = 4000;
 app.use(cors({
   origin: '*'
 }));
+
+app.use(express.json());
+
 
 
 app.get('/', (req, res) => {
@@ -33,6 +36,8 @@ res.send(fruit)
 
 
 })
+
+app.use('/api/users',  router);
 
 
 app.listen(port, () => {
