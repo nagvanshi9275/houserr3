@@ -9,6 +9,10 @@ import { Container, Box, Typography, Button } from '@mui/material';
 import Login from './Login';
 import Register from './Register';
 
+import NavBar from './Navbar';
+
+
+
 function App() {
   const [fruits, setFruits] = useState([]);
 
@@ -106,8 +110,14 @@ function App() {
   return (
     <Router>
       <div className="App">
+
+      <NavBar/>
+
+
         <Container maxWidth="sm">
           <Box my={4} textAlign="center">
+
+         
 
 
             <Box mt={4}>
