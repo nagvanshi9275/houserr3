@@ -11,7 +11,14 @@ import Register from './Register';
 
 import NavBar from './Navbar';
 
+import ResponsiveVideo from './Responsivevideo';
 
+//import {react.svg} from 
+
+import polu from "./houserr.mp4"
+
+
+//import 
 
 function App() {
   const [fruits, setFruits] = useState([]);
@@ -111,8 +118,13 @@ function App() {
     <Router>
       <div className="App">
 
+        
+
       <NavBar/>
 
+      <ResponsiveVideo src={polu}/>
+         
+         
 
         <Container maxWidth="sm">
           <Box my={4} textAlign="center">
@@ -145,7 +157,7 @@ function App() {
             </nav>
 
 
-
+            
 
 
 
