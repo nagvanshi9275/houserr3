@@ -1,5 +1,6 @@
 
 
+
 // src/components/ResponsiveVideo.js
 import React from 'react';
 import { Box } from '@mui/material';
@@ -8,22 +9,20 @@ const ResponsiveVideo = ({ src }) => {
   return (
     <Box
       sx={{
-        position: 'relative',
-        paddingBottom: '56.25%', // 16:9 aspect ratio
-        height: 0,
-        overflow: 'hidden',
-        maxWidth: '100%',
-        backgroundColor: '#000',
-        '& iframe, & video': {
-          position: 'absolute',
-          top: 0,
-          left: 0,
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100vw',
+        height: '100vh',
+        zIndex: -1,
+        '& video': {
+          objectFit: 'cover',
           width: '100%',
           height: '100%',
         },
       }}
     >
-      <video autoPlay muted loop>
+      <video autoPlay muted loop playsInline>
         <source src={src} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
@@ -32,7 +31,6 @@ const ResponsiveVideo = ({ src }) => {
 };
 
 export default ResponsiveVideo;
-
 
 
 

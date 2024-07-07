@@ -1,177 +1,31 @@
 
 
 
-
-import React, { useEffect, useState } from 'react';
-import './App.css';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import { Container, Box, Typography, Button } from '@mui/material';
-import Login from './Login';
-import Register from './Register';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Container } from '@mui/material';
 
 import NavBar from './Navbar';
-
 import ResponsiveVideo from './Responsivevideo';
+import Form from "./Form";
+import vimeo from "./houserr.mp4";
 
-//import {react.svg} from 
-
-import polu from "./houserr.mp4"
-
-
-//import 
-
-function App() {
-  const [fruits, setFruits] = useState([]);
-
-  const[register1,  setregister1] = useState(false)
-
-  const[login1, setlogin1] = useState(true)
-
-  useEffect(() => {
-    fetch('http://localhost:4000/fruit')
-      .then(response => response.json())
-      .then(data => setFruits(data))
-      .catch(error => console.error('Error fetching fruits:', error));
-  }, []);
-
-     function Register1(){
-
-       setlogin1(true)
-
-       setregister1(false)
-
-
-     }
-
-     function Login1() {
-
-        setregister1(true)
-
-        setlogin1(false)
-
-
-      
-     }
-
-
-   /*
-   
-
-   async function Submit1({formData}){
-
-      console.log(formData)
-
-    //  e.preventDefault();
-     // e.preventdefault()
-
-  
-
-      try{
-
-        const response = await fetch('http://localhost:4000/api/users/register', {
-
-          method: 'POST',
-
-          headers: {
-            'Content-Type': 'application/json'
-          },
-    
-          body: JSON.stringify(formData)
-
-
-
-
-        })
-
-        const data = await response.json();
-
-        console.log(data);
-
-
-
-
-      } catch(error) {
-
-        console.log(error.message)
-
-
-
-      }
-        
-
-
-
-
-
-
-
-    }
-
-
-   */
-
-
-
-
-
+export default function App() {
   return (
     <Router>
-      <div className="App">
-
-        
-
-      <NavBar/>
-
-      <ResponsiveVideo src={polu}/>
-         
-         
-
-        <Container maxWidth="sm">
-          <Box my={4} textAlign="center">
-
-         
-
-
-            <Box mt={4}>
-              <Routes>
-                <Route path="/" element={<Register  />} />
-                <Route path="/login" element={<Login />} />
-              </Routes>
-            </Box>
-
-                         <nav>
-             { register1 && <Button component={Link} onClick={Register1} to="/" variant="contained" color="primary" sx={{ margin: 1 }}>
-                Register
-              </Button>
-
-            }
-
-
-             { login1 && <Button onClick={Login1} component={Link} to="/login" variant="contained" color="primary" sx={{ margin: 1 }}>
-                Login
-              </Button>
-
-          }
-
-
-            </nav>
-
-
-            
-
-
-
-          </Box>
-        </Container>
-      </div>
+      <NavBar />
+      {/* Place the Container here to wrap the Routes */}
+      <Container sx={{ marginTop: '0px' }}>
+        <Routes>
+          {/* The video will be displayed only on the home route */}
+          <Route path="/" element={<ResponsiveVideo src={vimeo} />} />
+          {/* The form will be displayed on the /blog route */}
+          <Route path="/blog*" element={<Form />} />
+        </Routes>
+      </Container>
     </Router>
   );
 }
-
-export default App;
-
-
-
 
 
 

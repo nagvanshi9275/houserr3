@@ -1,4 +1,3 @@
-
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -17,6 +16,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   const theme = useTheme();
@@ -79,7 +79,7 @@ const NavBar = () => {
             </List>
           )}
           {['Privillage', 'How to Book', 'Blog'].map((text) => (
-            <ListItem button key={text}>
+            <ListItem button key={text} component={Link} to={text.toLowerCase().replace(' ', '-')}>
               <ListItemText primary={text} />
             </ListItem>
           ))}
@@ -94,61 +94,60 @@ const NavBar = () => {
   );
 
   return (
-    <AppBar position="static" color="default">
-      <Container maxWidth="lg">
-        <Toolbar disableGutters>
-          {isMobile ? (
-            <>
-              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                Company Name
-              </Typography>
-              <IconButton
-                size="large"
-                edge="start"
-                color="inherit"
-                aria-label="menu"
-                onClick={toggleDrawer(true)}
-              >
-                <MenuIcon />
-              </IconButton>
-            </>
-          ) : (
-            <Grid container alignItems="center" spacing={4}>
-              <Grid item xs={12} md={3}>
-                <Typography variant="h6" component="div">
-                  Company Name
+    <>
+      <AppBar position="fixed" color="default">
+        <Container maxWidth="lg">
+          <Toolbar disableGutters>
+            {isMobile ? (
+              <>
+                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                  <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    Company Name
+                  </Link>
                 </Typography>
+                <IconButton
+                  size="large"
+                  edge="start"
+                  color="inherit"
+                  aria-label="menu"
+                  onClick={toggleDrawer(true)}
+                >
+                  <MenuIcon />
+                </IconButton>
+              </>
+            ) : (
+              <Grid container alignItems="center" spacing={4}>
+                <Grid item xs={12} md={3}>
+                  <Typography variant="h6" component="div">
+                    <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+                      Company Name
+                    </Link>
+                  </Typography>
+                </Grid>
+                <Grid item xs={12} md={9}>
+                  <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+                    <Button color="inherit" onClick={handleCityMenuOpen}>
+                      City
+                    </Button>
+                    {cityMenu}
+                    <Button color="inherit" component={Link} to="/privillage">Privillage</Button>
+                    <Button color="inherit" component={Link} to="/how-to-book">How to Book</Button>
+                    <Button color="inherit" component={Link} to="/blog">Blog</Button>
+                    <Button variant="contained" color="primary">
+                      Request Call
+                    </Button>
+                  </Box>
+                </Grid>
               </Grid>
-              <Grid item xs={12} md={9}>
-                <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-                  <Button color="inherit" onClick={handleCityMenuOpen}>
-                    City
-                  </Button>
-                  {cityMenu}
-                  <Button color="inherit">Privillage</Button>
-                  <Button color="inherit">How to Book</Button>
-                  <Button color="inherit">Blog</Button>
-                  <Button variant="contained" color="primary">
-                    Request Call
-                  </Button>
-                </Box>
-              </Grid>
-            </Grid>
-          )}
-        </Toolbar>
-      </Container>
-      {drawer}
-    </AppBar>
+            )}
+          </Toolbar>
+        </Container>
+        {drawer}
+      </AppBar>
+      {/* Adding some spacing to account for the fixed AppBar */}
+      <Toolbar />
+    </>
   );
 };
 
 export default NavBar;
-
-
-
-
-
-
-
-
-
