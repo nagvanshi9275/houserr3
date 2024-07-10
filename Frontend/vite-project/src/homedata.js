@@ -9,7 +9,7 @@ const homeData = [
         {
           locationTitle: "Adyar",
           locationDescription: "A prime residential area with excellent connectivity.",
-          houseImages: ["https://i.postimg.cc/zXCfsb7Q/indiaget.webp", "https://i.postimg.cc/zXCfsb7Q/indiaget.webp", "https://i.postimg.cc/zXCfsb7Q/indiaget.webp", "https://i.postimg.cc/zXCfsb7Q/indiaget.webp"],
+          houseImages: ["https://i.postimg.cc/z3mc3prx/pexels-jvdm-1457842.jpg", "https://i.postimg.cc/G2zHKS25/pexels-pixabay-271624.jpg", "https://i.postimg.cc/C1Js87VF/pexels-fotoaibe-1669799.jpg", "https://i.postimg.cc/zXCfsb7Q/indiaget.webp"],
           pricing: "Starting from ₹80 lakhs",
           houses: [
             {
@@ -44,7 +44,7 @@ const homeData = [
         {
           locationTitle: "Kothrud",
           locationDescription: "A popular residential area with all essential facilities.",
-          houseImages: ["kothrud_house1.jpg", "kothrud_house2.jpg", "kothrud_house3.jpg", "kothrud_house4.jpg"],
+          houseImages: ["https://i.postimg.cc/kGnVsrWk/architecture-5339245-1280.jpg", "https://i.postimg.cc/zXCfsb7Q/indiaget.webp", "kothrud_house3.jpg", "kothrud_house4.jpg"],
           pricing: "Starting from ₹70 lakhs",
           houses: [
             {
