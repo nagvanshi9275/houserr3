@@ -4,12 +4,12 @@ const homeData = [
     {
       cityName: "Chennai",
       cityDescription: "A vibrant city with rich cultural heritage and modern infrastructure.",
-      cityImages: ["chennai1.jpg", "chennai2.jpg", "chennai3.jpg", "chennai4.jpg"],
+      cityImages: "https://i.postimg.cc/zXCfsb7Q/indiaget.webp",
       locations: [
         {
           locationTitle: "Adyar",
           locationDescription: "A prime residential area with excellent connectivity.",
-          houseImages: ["adyar_house1.jpg", "adyar_house2.jpg", "adyar_house3.jpg", "adyar_house4.jpg"],
+          houseImages: ["https://i.postimg.cc/zXCfsb7Q/indiaget.webp", "https://i.postimg.cc/zXCfsb7Q/indiaget.webp", "https://i.postimg.cc/zXCfsb7Q/indiaget.webp", "https://i.postimg.cc/zXCfsb7Q/indiaget.webp"],
           pricing: "Starting from ₹80 lakhs",
           houses: [
             {
@@ -18,7 +18,7 @@ const homeData = [
               housePricing: "₹1.2 crores",
               address: "123 Adyar St, Chennai",
               residentManager: "Rajesh Kumar",
-              houseImages: ["adyar_house1a.jpg", "adyar_house1b.jpg", "adyar_house1c.jpg", "adyar_house1d.jpg"],
+              houseImages: ["https://i.postimg.cc/zXCfsb7Q/indiaget.webp", "https://i.postimg.cc/zXCfsb7Q/indiaget.webp", "https://i.postimg.cc/zXCfsb7Q/indiaget.webp", "https://i.postimg.cc/zXCfsb7Q/indiaget.webp"],
               nearbyProperties: [
                 {
                   propertyTitle: "Nearby Property 1",
@@ -39,7 +39,7 @@ const homeData = [
     {
       cityName: "Pune",
       cityDescription: "A rapidly growing city known for its educational institutions and IT hubs.",
-      cityImages: ["pune1.jpg", "pune2.jpg", "pune3.jpg", "pune4.jpg"],
+      cityImages: "https://i.postimg.cc/zXCfsb7Q/indiaget.webp",
       locations: [
         {
           locationTitle: "Kothrud",
@@ -74,7 +74,7 @@ const homeData = [
     {
       cityName: "Bangalore",
       cityDescription: "The Silicon Valley of India, known for its tech industry and pleasant climate.",
-      cityImages: ["bangalore1.jpg", "bangalore2.jpg", "bangalore3.jpg", "bangalore4.jpg"],
+      cityImages: "https://i.postimg.cc/zXCfsb7Q/indiaget.webp",
       locations: [
         {
           locationTitle: "Whitefield",
@@ -109,7 +109,7 @@ const homeData = [
     {
       cityName: "Delhi",
       cityDescription: "The capital city of India, rich in history and cultural diversity.",
-      cityImages: ["delhi1.jpg", "delhi2.jpg", "delhi3.jpg", "delhi4.jpg"],
+      cityImages: "https://i.postimg.cc/zXCfsb7Q/indiaget.webp",
       locations: [
         {
           locationTitle: "South Delhi",
@@ -142,6 +142,8 @@ const homeData = [
       ]
     }
   ];
+  
+  export default homeData;
   
 
 

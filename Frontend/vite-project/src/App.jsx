@@ -1,24 +1,33 @@
 
 
-
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Container } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 
 import NavBar from './Navbar';
 import ResponsiveVideo from './Responsivevideo';
 import Form from "./Form";
 import vimeo from "./houserr.mp4";
+import Citydata from "./Citydata";
+import Citydetail from "./Citydetail";  // Import Citydetail component
 
 export default function App() {
   return (
     <Router>
       <NavBar />
-      {/* Place the Container here to wrap the Routes */}
-      <Container sx={{ marginTop: '0px' }}>
+      <Container sx={{ marginTop: '30px' }}>
         <Routes>
-          {/* The video will be displayed only on the home route */}
-          <Route path="/" element={<ResponsiveVideo src={vimeo} />} />
+          {/* The video and city data will be displayed on the home route */}
+          <Route path="/" element={
+            <>
+              <ResponsiveVideo src={vimeo} />
+              <Citydata />
+            </>
+          } />
+
+          {/* Add a route for individual cities */}
+          <Route path="/:cityName" element={<Citydetail />} />
+
           {/* The form will be displayed on the /blog route */}
           <Route path="/blog*" element={<Form />} />
         </Routes>
@@ -26,13 +35,6 @@ export default function App() {
     </Router>
   );
 }
-
-
-
-
-
-
-
 
 
 
