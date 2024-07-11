@@ -4,7 +4,7 @@ const homeData = [
     {
       cityName: "Chennai",
       cityDescription: "A vibrant city with rich cultural heritage and modern infrastructure.",
-      cityImages: "https://i.postimg.cc/zXCfsb7Q/indiaget.webp",
+      cityImages: "https://i.postimg.cc/CLJ0LPLc/chennai.jpg",
       locations: [
         {
           locationTitle: "Adyar",
@@ -39,7 +39,7 @@ const homeData = [
     {
       cityName: "Pune",
       cityDescription: "A rapidly growing city known for its educational institutions and IT hubs.",
-      cityImages: "https://i.postimg.cc/zXCfsb7Q/indiaget.webp",
+      cityImages: "https://i.postimg.cc/jS4mxLxP/bangluru.jpg",
       locations: [
         {
           locationTitle: "Kothrud",
@@ -74,7 +74,7 @@ const homeData = [
     {
       cityName: "Bangalore",
       cityDescription: "The Silicon Valley of India, known for its tech industry and pleasant climate.",
-      cityImages: "https://i.postimg.cc/zXCfsb7Q/indiaget.webp",
+      cityImages: "https://i.postimg.cc/fyRZQp0n/itmh.jpg",
       locations: [
         {
           locationTitle: "Whitefield",
