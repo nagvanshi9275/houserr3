@@ -12,6 +12,9 @@ const homeData = [
         locationDescription: "A well-planned residential area with good connectivity.",
         houseImages: ["https://i.postimg.cc/05DRb90k/anna1.jpg", "https://i.postimg.cc/t41z44FD/anna2.jpg", "https://i.postimg.cc/1Xq9z65s/anna3.jpg", "https://i.postimg.cc/RCDd5tHq/anna4.jpg"],
         pricing: "Starting from ₹1 crore",
+        price2bhk: "300000",
+        price3bhk: "7000000",
+
         houses: [
           {
             houseTitle: "3 BHK Apartment",
@@ -41,6 +44,11 @@ const homeData = [
         locationDescription: "A bustling locality with commercial and residential complexes.",
         houseImages: ["https://i.postimg.cc/qvqS8K3T/val1.jpg", "https://i.postimg.cc/05DRb90k/anna1.jpg", "https://i.postimg.cc/1Xq9z65s/anna3.jpg", "https://i.postimg.cc/05DRb90k/anna1.jpg"],
         pricing: "Starting from ₹80 lakhs",
+        
+        price2bhk: "320400",
+        price3bhk: "7036000",
+
+
         houses: [
           {
             houseTitle: "2 BHK Apartment",
@@ -78,6 +86,8 @@ const homeData = [
         locationDescription: "A popular residential area with all essential facilities.",
         houseImages: ["kothrud_house1.jpg", "kothrud_house2.jpg", "kothrud_house3.jpg", "kothrud_house4.jpg"],
         pricing: "Starting from ₹70 lakhs",
+        price2bhk: "300000",
+        price3bhk: "7000000",
         houses: [
           {
             houseTitle: "2 BHK Apartment",
@@ -107,6 +117,8 @@ const homeData = [
         locationDescription: "A developing suburb with a blend of residential and commercial spaces.",
         houseImages: ["baner_house1.jpg", "baner_house2.jpg", "baner_house3.jpg", "baner_house4.jpg"],
         pricing: "Starting from ₹75 lakhs",
+        price2bhk: "300000",
+        price3bhk: "7000000",
         houses: [
           {
             houseTitle: "3 BHK Apartment",
@@ -144,6 +156,8 @@ const homeData = [
         locationDescription: "A bustling suburb with numerous IT parks and residential complexes.",
         houseImages: ["whitefield_house1.jpg", "whitefield_house2.jpg", "whitefield_house3.jpg", "whitefield_house4.jpg"],
         pricing: "Starting from ₹90 lakhs",
+        price2bhk: "300000",
+        price3bhk: "7000000",
         houses: [
           {
             houseTitle: "4 BHK Villa",
@@ -173,6 +187,8 @@ const homeData = [
         locationDescription: "A trendy locality known for its vibrant nightlife and cultural diversity.",
         houseImages: ["indiranagar_house1.jpg", "indiranagar_house2.jpg", "indiranagar_house3.jpg", "indiranagar_house4.jpg"],
         pricing: "Starting from ₹1 crore",
+        price2bhk: "300000",
+        price3bhk: "7000000",
         houses: [
           {
             houseTitle: "3 BHK Apartment",
@@ -210,6 +226,8 @@ const homeData = [
         locationDescription: "A posh locality known for its green spaces and upscale residences.",
         houseImages: ["southdelhi_house1.jpg", "southdelhi_house2.jpg", "southdelhi_house3.jpg", "southdelhi_house4.jpg"],
         pricing: "Starting from ₹2 crores",
+        price2bhk: "300000",
+        price3bhk: "7000000",
         houses: [
           {
             houseTitle: "3 BHK Apartment",
@@ -239,6 +257,8 @@ const homeData = [
         locationDescription: "A major financial and technology hub with modern infrastructure.",
         houseImages: ["gurgaon_house1.jpg", "gurgaon_house2.jpg", "gurgaon_house3.jpg", "gurgaon_house4.jpg"],
         pricing: "Starting from ₹1 crore",
+        price2bhk: "300000",
+        price3bhk: "7000000",
         houses: [
           {
             houseTitle: "4 BHK Apartment",

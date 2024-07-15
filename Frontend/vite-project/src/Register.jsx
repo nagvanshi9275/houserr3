@@ -1,18 +1,20 @@
 
 
 
-
 // src/components/Register.js
 import React, { useState } from 'react';
 import { TextField, Button, Container, Typography, Box } from '@mui/material';
+import { useNavigate } from 'react-router-dom'; // Step 1: Import useNavigate
 
-const Register = () => {
+const Register = ({setmessage, setgmail}) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     password: ''
   });
+
+  const navigate = useNavigate(); // Step 2: Initialize navigate
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,65 +24,48 @@ const Register = () => {
     });
   };
 
- // const handleSubmit = (e) => {
-   // e.preventDefault();
-    // Here you can handle the registration logic (e.g., send data to backend)
-    //console.log(formData);
-  //};
-
-  async function onSubmit(e){
-
+  async function onSubmit(e) {
     e.preventDefault();
 
     console.log(formData);
 
-
-    try{
-
+    try {
       const response = await fetch('http://localhost:4000/api/users/register', {
-
         method: 'POST',
-
         headers: {
           'Content-Type': 'application/json'
         },
-  
         body: JSON.stringify(formData)
-
-
-
-
-      })
+      });
 
       const data = await response.json();
 
-      console.log(data);
+        if(response.ok){
+
+          console.log(data)
+
+          navigate('/')
+
+          setmessage(data.name)
+
+          setgmail(data.email)
+
+
+        }
 
 
 
 
-    } catch(error) {
 
-      console.log(error.message)
+    //  console.log(data);
 
-
-
+      //if (data.success) { // Adjust based on your API's response
+        //navigate('/'); // Step 3: Use navigate to redirect
+      //}
+    } catch (error) {
+      console.log(error.message);
     }
-
-
-
-
-
-
-
-
-
-   
-
   }
-
-  
-
 
   return (
     <Container maxWidth="sm">
@@ -136,37 +121,11 @@ const Register = () => {
           </Button>
         </form>
       </Box>
-
-
-       
-
     </Container>
   );
 };
 
 export default Register;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -7,7 +7,7 @@ import { Button, Box, Container } from '@mui/material';
 import Login from "./Login";
 import Register from "./Register";
 
-export default function Form() {
+export default function Form({setmessage, setgmail}) {
   const [show, setShow] = React.useState(false);
   const [dark, setDark] = React.useState(true);
   const navigate = useNavigate(); // Use the useNavigate hook
@@ -34,8 +34,8 @@ export default function Form() {
 
       <Box my={4} textAlign="center">
         <Routes>
-          <Route path="/register" element={<Register />} />
-          <Route path="/" element={<Login />} />
+          <Route path="/register" element={<Register setmessage={setmessage} setgmail={setgmail}/>} />
+          <Route path="/" element={<Login setmessage={setmessage} setgmail={setgmail} />} />
         </Routes>
         
         <Box display="flex" justifyContent="center" mt={2}>

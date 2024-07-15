@@ -10,8 +10,15 @@ import Form from "./Form";
 import vimeo from "./houserr.mp4";
 import Citydata from "./Citydata";
 import Citydetail from "./Citydetail";  // Import Citydetail component
+import { NoEncryptionGmailerrorredRounded } from "@mui/icons-material";
 
 export default function App() {
+
+const[message, setmessage] = React.useState("")
+
+const[gmail, setgmail] = React.useState("")
+
+
   return (
     <Router>
       <NavBar />
@@ -20,16 +27,19 @@ export default function App() {
           {/* The video and city data will be displayed on the home route */}
           <Route path="/" element={
             <>
+
+              {message && <h1>WELCOME: {message}</h1>}
+
               <ResponsiveVideo src={vimeo} />
               <Citydata />
             </>
           } />
 
           {/* Add a route for individual cities */}
-          <Route path="/:cityName" element={<Citydetail />} />
+          <Route path="/:cityName" element={<Citydetail message={message} gmail={gmail} />} />
 
           {/* The form will be displayed on the /blog route */}
-          <Route path="/blog*" element={<Form />} />
+          <Route path="/blog*" element={<Form setmessage={setmessage} setgmail={setgmail}/>} />
         </Routes>
       </Container>
     </Router>

@@ -5,11 +5,16 @@
 import React, { useState } from 'react';
 import { TextField, Button, Container, Typography, Box } from '@mui/material';
 
-const Login = () => {
+
+import { useNavigate } from 'react-router-dom';
+
+const Login = ({setmessage, setgmail}) => {
   const [formData, setFormData] = useState({
     email: '',
     password: ''
   });
+
+  const navigate = useNavigate(); 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -60,9 +65,31 @@ const Login = () => {
 
       const data = await response.json();
 
-      console.log(data);
+     // console.log(data);
+
+      if(response.ok){
 
 
+
+
+        navigate('/')
+
+        setmessage(data.name)
+
+       // console.log(data.name)
+
+        setgmail(data.email)
+
+        console.log(data)
+
+
+      }
+
+
+
+
+
+       
       
     } catch (error) {
 

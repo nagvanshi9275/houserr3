@@ -1,10 +1,28 @@
+
+
+
+
+
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { Container, Grid, Card, CardMedia, CardContent, Typography, IconButton, CardActions } from "@mui/material";
 import { ArrowForward } from "@mui/icons-material";
 import homeData from "./homedata";
 
-export default function Citydetail() {
+import { Button } from '@mui/material';
+
+import Form from "./Form";
+
+import Login from "./Login"
+
+export default function Citydetail({message, gmail}) {
+
+   const[visible, setvisible] = React.useState(false)
+
+
+  const[city2, setcity2] = React.useState("")
+
+
   const { cityName } = useParams();
   const city = homeData.find((city) => city.cityName === cityName);
 
@@ -22,6 +40,100 @@ export default function Citydetail() {
 
   if (!city) return <div>City not found</div>;
 
+
+
+
+
+
+      async   function Buy(location){
+
+             //   console.log("buy")
+
+          //   console.log(message)
+
+
+            //console.log(city2)
+
+  
+         // console.log(city.cityName)
+
+         // console.log(location.price3bhk)
+
+        //  console.log(location.price2bhk)
+
+        // console.log(location.locationTitle)
+
+      //   console.log(gmail)
+
+
+
+      const formData = {
+      //  message,
+       // city2,
+
+        product: city.cityName,
+        location: location.locationTitle,
+        pricing2Bhk: location.price2bhk,
+        pricing3Bhk: location.price3bhk,
+        name: message,
+        email:gmail
+      };
+
+
+
+
+
+          try{
+
+            const response = await fetch('http://localhost:4000/api/users/productdata', {
+
+              method: 'POST',
+
+              headers: {
+                'Content-Type': 'application/json'
+              },
+        
+              body: JSON.stringify(formData)
+
+
+
+
+
+
+
+
+            })
+
+            const data = await response.json()
+
+            if(response.ok){
+
+              console.log(message, "your home are added soon our team reachout to you")
+
+
+            }
+
+
+
+
+          } catch(error){
+
+           console.log(error.message)
+
+
+          }
+
+
+
+
+
+         }
+
+
+
+
+
+
   return (
     <Container>
       <Typography variant="h4" component="h2" gutterBottom>
@@ -29,6 +141,9 @@ export default function Citydetail() {
       </Typography>
       <Typography variant="body1" paragraph>
         {city.cityDescription}
+
+        
+
       </Typography>
       <Grid container spacing={3}>
         {city.locations.map((location, locationIndex) => (
@@ -50,6 +165,13 @@ export default function Citydetail() {
                 <Typography variant="body1" color="textPrimary">
                   {location.pricing}
                 </Typography>
+
+                <Button onClick={() => Buy(location)} variant="contained" color="warning">
+                              Buy NOW!
+                     </Button>
+
+              
+
               </CardContent>
               <CardActions disableSpacing>
                 <IconButton
@@ -74,3 +196,10 @@ export default function Citydetail() {
     </Container>
   );
 }
+
+
+
+
+
+
+

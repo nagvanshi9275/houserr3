@@ -27,9 +27,9 @@ export default router
 
 
 
+//https://localhost:4000/productdata
 
-
-
+//productdata
 
 
 
