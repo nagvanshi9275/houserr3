@@ -1,5 +1,7 @@
 
 
+ 
+
 
 const homeData = [
   {
@@ -22,7 +24,10 @@ const homeData = [
             housePricing: "₹1.5 crores",
             address: "101 Anna Nagar, Chennai",
             residentManager: "Rajesh Kumar",
-            houseImages: ["anna_nagar_house1a.jpg", "anna_nagar_house1b.jpg", "anna_nagar_house1c.jpg", "anna_nagar_house1d.jpg"],
+
+ 
+           houseImages: ["https://i.postimg.cc/D0t8Fpj6/house1.jpg",
+            , "https://i.postimg.cc/HLyJvg6x/house2.jpg", "https://i.postimg.cc/KvxHZcT6/house3.jpg"],
             nearbyProperties: [
               {
                 propertyTitle: "Nearby Property 1",

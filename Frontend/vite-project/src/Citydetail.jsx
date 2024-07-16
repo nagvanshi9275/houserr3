@@ -15,6 +15,8 @@ import Form from "./Form";
 
 import Login from "./Login"
 
+import {  useNavigate , Link} from "react-router-dom";
+
 export default function Citydetail({message, gmail}) {
 
    const[visible, setvisible] = React.useState(false)
@@ -25,6 +27,10 @@ export default function Citydetail({message, gmail}) {
 
   const { cityName } = useParams();
   const city = homeData.find((city) => city.cityName === cityName);
+
+    const navigate = useNavigate();
+
+
 
   const [imageIndexes, setImageIndexes] = useState(
     city.locations.map(() => 0) // Initialize image indexes for each location to 0
@@ -110,6 +116,9 @@ export default function Citydetail({message, gmail}) {
 
               console.log(message, "your home are added soon our team reachout to you")
 
+              //navigate('/confirmed')
+
+             // navigate(`/${city.cityName}/${location.locationTitle}`);
 
             }
 
@@ -166,11 +175,13 @@ export default function Citydetail({message, gmail}) {
                   {location.pricing}
                 </Typography>
 
+                <Link to={`/house/${city.cityName}/${location.locationTitle}`}>
+
                 <Button onClick={() => Buy(location)} variant="contained" color="warning">
                               Buy NOW!
                      </Button>
 
-              
+              </Link>
 
               </CardContent>
               <CardActions disableSpacing>

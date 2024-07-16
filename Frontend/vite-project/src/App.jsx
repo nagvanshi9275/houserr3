@@ -12,6 +12,8 @@ import Citydata from "./Citydata";
 import Citydetail from "./Citydetail";  // Import Citydetail component
 import { NoEncryptionGmailerrorredRounded } from "@mui/icons-material";
 
+import House from "./House";
+
 export default function App() {
 
 const[message, setmessage] = React.useState("")
@@ -39,7 +41,14 @@ const[gmail, setgmail] = React.useState("")
           <Route path="/:cityName" element={<Citydetail message={message} gmail={gmail} />} />
 
           {/* The form will be displayed on the /blog route */}
+
+          <Route path="/house/:city/:location" element={<House />} />
+
           <Route path="/blog*" element={<Form setmessage={setmessage} setgmail={setgmail}/>} />
+
+         
+
+
         </Routes>
       </Container>
     </Router>
