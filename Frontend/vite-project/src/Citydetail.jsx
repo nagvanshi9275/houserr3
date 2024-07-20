@@ -41,7 +41,7 @@ export default function Citydetail({ message, gmail }) {
       );
       setFilteredLocations(filtered);
     }
-  }, [searchQuery, city]);do
+  }, [searchQuery, city]);
 
   const handleChange = (e) => {
     setSearchQuery(e.target.value);
