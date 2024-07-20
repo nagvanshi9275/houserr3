@@ -99,7 +99,7 @@ export default function House() {
           </Grid>
         </Box>
         <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center' }}>
-          <Button variant="contained" color="primary" sx={{ width: '100%', maxWidth: '600px' }}>
+          <Button variant="contained" color="warning" sx={{ width: '100%', maxWidth: '600px' }}>
             Book
           </Button>
         </Box>
