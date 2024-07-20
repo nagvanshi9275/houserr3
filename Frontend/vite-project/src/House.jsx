@@ -30,6 +30,32 @@ const fadeIn = {
   visible: { opacity: 1 }
 };
 
+
+     function Booked(){
+
+        console.log("booked")
+
+
+
+
+
+
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export default function House() {
   const { city: cityName, location: locationTitle } = useParams();
   
@@ -99,7 +125,7 @@ export default function House() {
           </Grid>
         </Box>
         <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center' }}>
-          <Button variant="contained" color="warning" sx={{ width: '100%', maxWidth: '600px' }}>
+          <Button onClick={Booked} variant="contained" color="warning" sx={{ width: '100%', maxWidth: '600px' }}>
             Book
           </Button>
         </Box>
