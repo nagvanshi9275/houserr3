@@ -102,7 +102,7 @@ const NavBar = () => {
               <>
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                   <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-                    Company Name
+                    Roomoyo
                   </Link>
                 </Typography>
                 <IconButton
@@ -120,7 +120,7 @@ const NavBar = () => {
                 <Grid item xs={12} md={3}>
                   <Typography variant="h6" component="div">
                     <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-                      Company Name
+                      Roomyo
                     </Link>
                   </Typography>
                 </Grid>
@@ -132,7 +132,7 @@ const NavBar = () => {
                     {cityMenu}
                     <Button color="inherit" component={Link} to="/privillage">Privillage</Button>
                     <Button color="inherit" component={Link} to="/how-to-book">How to Book</Button>
-                    <Button color="inherit" component={Link} to="/blog">Blog</Button>
+                    <Button color="inherit" component={Link} to="/blog">Login</Button>
                     <Button variant="contained" color="primary">
                       Request Call
                     </Button>
@@ -151,3 +151,11 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
+
+
+
+
+
+
+

@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 import { TextField, Button, Container, Typography, Box } from '@mui/material';
 import { useNavigate } from 'react-router-dom'; // Step 1: Import useNavigate
 
-const Register = ({setmessage, setgmail}) => {
+const Register = ({setmessage, setgmail, setphone}) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -49,6 +49,8 @@ const Register = ({setmessage, setgmail}) => {
           setmessage(data.name)
 
           setgmail(data.email)
+
+          setphone(data.phone)
 
 
         }

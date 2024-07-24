@@ -20,6 +20,8 @@ const[message, setmessage] = React.useState("")
 
 const[gmail, setgmail] = React.useState("")
 
+const[phone, setphone] = React.useState("")
+
 
   return (
     <Router>
@@ -42,9 +44,9 @@ const[gmail, setgmail] = React.useState("")
 
           {/* The form will be displayed on the /blog route */}
 
-          <Route path="/house/:city/:location" element={<House />} />
+          <Route path="/house/:city/:location" element={<House message={message} gmail={gmail} phone={phone} />} />
 
-          <Route path="/blog*" element={<Form setmessage={setmessage} setgmail={setgmail}/>} />
+          <Route path="/blog*" element={<Form setmessage={setmessage} setgmail={setgmail} setphone={setphone} />}/>
 
          
 

@@ -49,8 +49,8 @@ export default async function Productdata(req, res){
           // await productdata.save()
          // kitnibar++
 
-          productdata.product = product;
-          productdata.location = location;
+          productdata.product = [...productdata.product, product];
+          productdata.location = [...productdata.location, location];
           productdata.pricing2Bhk = pricing2Bhk;
           productdata.pricing3Bhk = pricing3Bhk;
            
@@ -59,7 +59,7 @@ export default async function Productdata(req, res){
           await productdata.save();
 
 
-
+         //  await productdata.location.push(location).save()
 
            res.status(200).json({message: "product updated successfully", productdata})
 

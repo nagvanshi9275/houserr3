@@ -2,10 +2,11 @@
 import mongoose from "mongoose";
 
 
+
 const userSchema = new mongoose.Schema({
 
 product:{
-type: String,
+type: [String],
 required: true
 
 
@@ -14,7 +15,7 @@ required: true
 
 location:{
 
-type: String,
+type: [String],
 
 required: true
 

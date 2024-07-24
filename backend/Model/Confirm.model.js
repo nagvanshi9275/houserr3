@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
 
     city:{
      
-     type: String,
+     type: [String],
      required: true
      
 
@@ -18,14 +18,14 @@ const userSchema = new mongoose.Schema({
     },
 
     location:{
-     type: String,
+     type: [String],
      required: true
 
 
     },
 
     pricing:{
-     type: Number,
+     type: [Number],
      
      required: true
 

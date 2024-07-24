@@ -8,7 +8,7 @@ import { TextField, Button, Container, Typography, Box } from '@mui/material';
 
 import { useNavigate } from 'react-router-dom';
 
-const Login = ({setmessage, setgmail}) => {
+const Login = ({setmessage, setgmail, setphone}) => {
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -79,6 +79,8 @@ const Login = ({setmessage, setgmail}) => {
        // console.log(data.name)
 
         setgmail(data.email)
+
+        setphone(data.phone)
 
         console.log(data)
 

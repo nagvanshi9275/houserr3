@@ -50,11 +50,11 @@ export default async function Confirme(req, res){
 
    } else {
 
-    confirmeddata.city = city,
+    confirmeddata.city = [...confirmeddata.city, city],
 
-    confirmeddata.location = location,
+    confirmeddata.location = [   ...confirmeddata.location,  location],
 
-    confirmeddata.pricing = pricing,
+    confirmeddata.pricing = [...confirmeddata.pricing,  pricing],
 
     confirmeddata.name = name,
 
@@ -68,6 +68,9 @@ export default async function Confirme(req, res){
 
    }
 
+   await confirmeddata.save()
+
+   res.status(201).json({message: "Confirmed successfully", confirmeddata})
 
         
     } catch (error) {
@@ -83,6 +86,7 @@ export default async function Confirme(req, res){
 
 
 }
+
 
 
 

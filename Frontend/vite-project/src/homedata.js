@@ -44,6 +44,307 @@ const homeData = [
           // Add more houses if needed
         ]
       },
+
+// trying to add the more location
+
+
+{
+  locationTitle: "Bom madurai",
+  locationDescription: "A well-planned residential area with good connectivity.",
+  houseImages: ["https://i.postimg.cc/05DRb90k/anna1.jpg", "https://i.postimg.cc/t41z44FD/anna2.jpg", "https://i.postimg.cc/1Xq9z65s/anna3.jpg", "https://i.postimg.cc/RCDd5tHq/anna4.jpg"],
+  pricing: "Starting from ₹1 crore",
+  price2bhk: "300000",
+  price3bhk: "7000000",
+
+  houses: [
+    {
+      houseTitle: "3 BHK Apartment",
+      houseDescription: "A spacious 3-bedroom apartment with modern amenities.",
+      housePricing: "₹1.5 crores",
+      address: "101 Anna Nagar, Chennai",
+      residentManager: "Rajesh Kumar",
+
+
+     houseImages: ["https://i.postimg.cc/D0t8Fpj6/house1.jpg",
+      , "https://i.postimg.cc/HLyJvg6x/house2.jpg", "https://i.postimg.cc/KvxHZcT6/house3.jpg"],
+      nearbyProperties: [
+        {
+          propertyTitle: "Nearby Property 1",
+          propertyDescription: "A cozy 2-bedroom flat.",
+          propertyImages: ["anna_nagar_nearby1a.jpg", "anna_nagar_nearby1b.jpg", "anna_nagar_nearby1c.jpg", "anna_nagar_nearby1d.jpg"]
+        },
+        {
+          propertyTitle: "Nearby Property 2",
+          propertyDescription: "A modern 4-bedroom villa.",
+          propertyImages: ["anna_nagar_nearby2a.jpg", "anna_nagar_nearby2b.jpg", "anna_nagar_nearby2c.jpg", "anna_nagar_nearby2d.jpg"]
+        }
+      ]
+    },
+    // Add more houses if needed
+  ]
+},
+
+{
+  locationTitle: "Kodambakkam",
+  locationDescription: "A well-planned residential area with good connectivity.",
+  houseImages: ["https://i.postimg.cc/SQck4QVy/6-Sophisticated-Dark-Bedroom-Themes-for-Chic-and-Comfortable-Homes-333-Art-Images.jpg", "https://i.postimg.cc/t41z44FD/anna2.jpg", "https://i.postimg.cc/1Xq9z65s/anna3.jpg", "https://i.postimg.cc/RCDd5tHq/anna4.jpg"],
+  pricing: "Starting from ₹10 crore",
+  price2bhk: "300000",
+  price3bhk: "7000000",
+
+  houses: [
+    {
+      houseTitle: "3 BHK Apartment",
+      houseDescription: "A spacious 3-bedroom apartment with modern amenities.",
+      housePricing: "₹1.5 crores",
+      address: "101 Anna Nagar, Chennai",
+      residentManager: "Rajesh Kumar",
+
+
+     houseImages: ["https://i.postimg.cc/D0t8Fpj6/house1.jpg",
+      , "https://i.postimg.cc/HLyJvg6x/house2.jpg", "https://i.postimg.cc/KvxHZcT6/house3.jpg"],
+      nearbyProperties: [
+        {
+          propertyTitle: "Nearby Property 1",
+          propertyDescription: "A cozy 2-bedroom flat.",
+          propertyImages: ["anna_nagar_nearby1a.jpg", "anna_nagar_nearby1b.jpg", "anna_nagar_nearby1c.jpg", "anna_nagar_nearby1d.jpg"]
+        },
+        {
+          propertyTitle: "Nearby Property 2",
+          propertyDescription: "A modern 4-bedroom villa.",
+          propertyImages: ["anna_nagar_nearby2a.jpg", "anna_nagar_nearby2b.jpg", "anna_nagar_nearby2c.jpg", "anna_nagar_nearby2d.jpg"]
+        }
+      ]
+    },
+    // Add more houses if needed
+  ]
+},
+
+
+{
+  locationTitle: "madurai",
+  locationDescription: "A well-planned residential area with good connectivity.",
+  houseImages: ["https://i.postimg.cc/05DRb90k/anna1.jpg", "https://i.postimg.cc/t41z44FD/anna2.jpg", "https://i.postimg.cc/1Xq9z65s/anna3.jpg", "https://i.postimg.cc/RCDd5tHq/anna4.jpg"],
+  pricing: "Starting from ₹1 crore",
+  price2bhk: "300000",
+  price3bhk: "7000000",
+
+  houses: [
+    {
+      houseTitle: "3 BHK Apartment",
+      houseDescription: "A spacious 3-bedroom apartment with modern amenities.",
+      housePricing: "₹1.5 crores",
+      address: "101 Anna Nagar, Chennai",
+      residentManager: "Rajesh Kumar",
+
+
+     houseImages: ["https://i.postimg.cc/D0t8Fpj6/house1.jpg",
+      , "https://i.postimg.cc/HLyJvg6x/house2.jpg", "https://i.postimg.cc/KvxHZcT6/house3.jpg"],
+      nearbyProperties: [
+        {
+          propertyTitle: "Nearby Property 1",
+          propertyDescription: "A cozy 2-bedroom flat.",
+          propertyImages: ["anna_nagar_nearby1a.jpg", "anna_nagar_nearby1b.jpg", "anna_nagar_nearby1c.jpg", "anna_nagar_nearby1d.jpg"]
+        },
+        {
+          propertyTitle: "Nearby Property 2",
+          propertyDescription: "A modern 4-bedroom villa.",
+          propertyImages: ["anna_nagar_nearby2a.jpg", "anna_nagar_nearby2b.jpg", "anna_nagar_nearby2c.jpg", "anna_nagar_nearby2d.jpg"]
+        }
+      ]
+    },
+    // Add more houses if needed
+  ]
+},
+
+{
+  locationTitle: "Rameshwaram",
+  locationDescription: "A well-planned residential area with good connectivity.",
+  houseImages: ["https://i.postimg.cc/QxcKKrbm/hag1.jpg", "https://i.postimg.cc/t41z44FD/anna2.jpg", "https://i.postimg.cc/1Xq9z65s/anna3.jpg", "https://i.postimg.cc/RCDd5tHq/anna4.jpg"],
+  pricing: "Starting from ₹16 crore",
+  price2bhk: "300000",
+  price3bhk: "7000000",
+
+  houses: [
+    {
+      houseTitle: "3 BHK Apartment",
+      houseDescription: "A spacious 3-bedroom apartment with modern amenities.",
+      housePricing: "₹1.5 crores",
+      address: "101 Anna Nagar, Chennai",
+      residentManager: "Rajesh Kumar",
+
+
+     houseImages: ["https://i.postimg.cc/D0t8Fpj6/house1.jpg",
+      , "https://i.postimg.cc/HLyJvg6x/house2.jpg", "https://i.postimg.cc/KvxHZcT6/house3.jpg"],
+      nearbyProperties: [
+        {
+          propertyTitle: "Nearby Property 1",
+          propertyDescription: "A cozy 2-bedroom flat.",
+          propertyImages: ["anna_nagar_nearby1a.jpg", "anna_nagar_nearby1b.jpg", "anna_nagar_nearby1c.jpg", "anna_nagar_nearby1d.jpg"]
+        },
+        {
+          propertyTitle: "Nearby Property 2",
+          propertyDescription: "A modern 4-bedroom villa.",
+          propertyImages: ["anna_nagar_nearby2a.jpg", "anna_nagar_nearby2b.jpg", "anna_nagar_nearby2c.jpg", "anna_nagar_nearby2d.jpg"]
+        }
+      ]
+    },
+    // Add more houses if needed
+  ]
+},
+
+{
+  locationTitle: "srinachippali",
+  locationDescription: "A well-planned residential area with good connectivity.",
+  houseImages: ["https://i.postimg.cc/qMmgWXkf/hag2.jpg", "https://i.postimg.cc/t41z44FD/anna2.jpg", "https://i.postimg.cc/1Xq9z65s/anna3.jpg", "https://i.postimg.cc/RCDd5tHq/anna4.jpg"],
+  pricing: "Starting from ₹1 crore",
+  price2bhk: "300000",
+  price3bhk: "7000000",
+
+  houses: [
+    {
+      houseTitle: "3 BHK Apartment",
+      houseDescription: "A spacious 3-bedroom apartment with modern amenities.",
+      housePricing: "₹1.5 crores",
+      address: "101 Anna Nagar, Chennai",
+      residentManager: "Rajesh Kumar",
+
+
+     houseImages: ["https://i.postimg.cc/D0t8Fpj6/house1.jpg",
+      , "https://i.postimg.cc/HLyJvg6x/house2.jpg", "https://i.postimg.cc/KvxHZcT6/house3.jpg"],
+      nearbyProperties: [
+        {
+          propertyTitle: "Nearby Property 1",
+          propertyDescription: "A cozy 2-bedroom flat.",
+          propertyImages: ["anna_nagar_nearby1a.jpg", "anna_nagar_nearby1b.jpg", "anna_nagar_nearby1c.jpg", "anna_nagar_nearby1d.jpg"]
+        },
+        {
+          propertyTitle: "Nearby Property 2",
+          propertyDescription: "A modern 4-bedroom villa.",
+          propertyImages: ["anna_nagar_nearby2a.jpg", "anna_nagar_nearby2b.jpg", "anna_nagar_nearby2c.jpg", "anna_nagar_nearby2d.jpg"]
+        }
+      ]
+    },
+    // Add more houses if needed
+  ]
+},
+
+{
+  locationTitle: "Trivaneshawaram",
+  locationDescription: "A well-planned residential area with good connectivity.",
+  houseImages: ["https://i.postimg.cc/x8DFfznn/hag3.jpg", "https://i.postimg.cc/t41z44FD/anna2.jpg", "https://i.postimg.cc/1Xq9z65s/anna3.jpg", "https://i.postimg.cc/RCDd5tHq/anna4.jpg"],
+  pricing: "Starting from ₹1 crore",
+  price2bhk: "300000",
+  price3bhk: "7000000",
+
+  houses: [
+    {
+      houseTitle: "3 BHK Apartment",
+      houseDescription: "A spacious 3-bedroom apartment with modern amenities.",
+      housePricing: "₹1.5 crores",
+      address: "101 Anna Nagar, Chennai",
+      residentManager: "Rajesh Kumar",
+
+
+     houseImages: ["https://i.postimg.cc/D0t8Fpj6/house1.jpg",
+      , "https://i.postimg.cc/HLyJvg6x/house2.jpg", "https://i.postimg.cc/KvxHZcT6/house3.jpg"],
+      nearbyProperties: [
+        {
+          propertyTitle: "Nearby Property 1",
+          propertyDescription: "A cozy 2-bedroom flat.",
+          propertyImages: ["anna_nagar_nearby1a.jpg", "anna_nagar_nearby1b.jpg", "anna_nagar_nearby1c.jpg", "anna_nagar_nearby1d.jpg"]
+        },
+        {
+          propertyTitle: "Nearby Property 2",
+          propertyDescription: "A modern 4-bedroom villa.",
+          propertyImages: ["anna_nagar_nearby2a.jpg", "anna_nagar_nearby2b.jpg", "anna_nagar_nearby2c.jpg", "anna_nagar_nearby2d.jpg"]
+        }
+      ]
+    },
+    // Add more houses if needed
+  ]
+},
+  
+
+{
+  locationTitle: "Commoneshwaram",
+  locationDescription: "A well-planned residential area with good connectivity.",
+  houseImages: ["https://i.postimg.cc/5Nnd3sfz/hag4.jpg", "https://i.postimg.cc/t41z44FD/anna2.jpg", "https://i.postimg.cc/1Xq9z65s/anna3.jpg", "https://i.postimg.cc/RCDd5tHq/anna4.jpg"],
+  pricing: "Starting from ₹1 crore",
+  price2bhk: "300000",
+  price3bhk: "7000000",
+
+  houses: [
+    {
+      houseTitle: "3 BHK Apartment",
+      houseDescription: "A spacious 3-bedroom apartment with modern amenities.",
+      housePricing: "₹1.5 crores",
+      address: "101 Anna Nagar, Chennai",
+      residentManager: "Rajesh Kumar",
+
+
+     houseImages: ["https://i.postimg.cc/D0t8Fpj6/house1.jpg",
+      , "https://i.postimg.cc/HLyJvg6x/house2.jpg", "https://i.postimg.cc/KvxHZcT6/house3.jpg"],
+      nearbyProperties: [
+        {
+          propertyTitle: "Nearby Property 1",
+          propertyDescription: "A cozy 2-bedroom flat.",
+          propertyImages: ["anna_nagar_nearby1a.jpg", "anna_nagar_nearby1b.jpg", "anna_nagar_nearby1c.jpg", "anna_nagar_nearby1d.jpg"]
+        },
+        {
+          propertyTitle: "Nearby Property 2",
+          propertyDescription: "A modern 4-bedroom villa.",
+          propertyImages: ["anna_nagar_nearby2a.jpg", "anna_nagar_nearby2b.jpg", "anna_nagar_nearby2c.jpg", "anna_nagar_nearby2d.jpg"]
+        }
+      ]
+    },
+    // Add more houses if needed
+  ]
+},
+
+
+
+{
+  locationTitle: "Mokleshware Nagar",
+  locationDescription: "A well-planned residential area with good connectivity.",
+  houseImages: ["https://i.postimg.cc/05DRb90k/anna1.jpg", "https://i.postimg.cc/t41z44FD/anna2.jpg", "https://i.postimg.cc/1Xq9z65s/anna3.jpg", "https://i.postimg.cc/RCDd5tHq/anna4.jpg"],
+  pricing: "Starting from ₹1 crore",
+  price2bhk: "300000",
+  price3bhk: "7000000",
+
+  houses: [
+    {
+      houseTitle: "3 BHK Apartment",
+      houseDescription: "A spacious 3-bedroom apartment with modern amenities.",
+      housePricing: "₹1.5 crores",
+      address: "101 Anna Nagar, Chennai",
+      residentManager: "Rajesh Kumar",
+
+
+     houseImages: ["https://i.postimg.cc/D0t8Fpj6/house1.jpg",
+      , "https://i.postimg.cc/HLyJvg6x/house2.jpg", "https://i.postimg.cc/KvxHZcT6/house3.jpg"],
+      nearbyProperties: [
+        {
+          propertyTitle: "Nearby Property 1",
+          propertyDescription: "A cozy 2-bedroom flat.",
+          propertyImages: ["anna_nagar_nearby1a.jpg", "anna_nagar_nearby1b.jpg", "anna_nagar_nearby1c.jpg", "anna_nagar_nearby1d.jpg"]
+        },
+        {
+          propertyTitle: "Nearby Property 2",
+          propertyDescription: "A modern 4-bedroom villa.",
+          propertyImages: ["anna_nagar_nearby2a.jpg", "anna_nagar_nearby2b.jpg", "anna_nagar_nearby2c.jpg", "anna_nagar_nearby2d.jpg"]
+        }
+      ]
+    },
+    // Add more houses if needed
+  ]
+},
+
+
+// trying to add
+
+
+
       {
         locationTitle: "Velachery",
         locationDescription: "A bustling locality with commercial and residential complexes.",

@@ -14,6 +14,11 @@ export default async function Login(req, res) {
 // for jwt login
 
 
+
+
+
+
+
 try {
 
 
@@ -32,7 +37,7 @@ if(!isMatch) return res.status(404).json({message: "invalid credientials"})
 
 const token = jwt.sign({email: user.email}, process.env.jwt_secret, { expiresIn: '1h' } )
 
-res.status(200).json({message: "loggged in sucessfully", token, name: user.name, email: user.email})
+res.status(200).json({message: "loggged in sucessfully", token, name: user.name, email: user.email, phone: user.phone})
     
 } catch (error) {
 
@@ -47,6 +52,36 @@ res.status(200).json({message: "loggged in sucessfully", token, name: user.name,
 
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
