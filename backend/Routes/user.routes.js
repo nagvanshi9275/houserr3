@@ -9,6 +9,7 @@ import Login from "../Controllors/Login.controllor.js"
 
 //import Productdata from "../Controllors/Login.controllor.js"
 
+import Getconfirmed from "../Controllors/get.confirmed.js"
 
 import Productdata from "../Controllors/product.controllor.js"
 
@@ -25,10 +26,12 @@ router.post('/productdata', Productdata)
 
 router.post('/confirmed', Confirme)
 
+router.post('/getdata', Getconfirmed)
+
 
 export default router
 
-
+//getdata
 
 
 //https://localhost:4000/productdata

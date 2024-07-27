@@ -1,3 +1,6 @@
+
+
+
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -78,7 +81,7 @@ const NavBar = () => {
               ))}
             </List>
           )}
-          {['Privillage', 'How to Book', 'Blog'].map((text) => (
+          {['Privillage', 'How to Book', 'login'].map((text) => (
             <ListItem button key={text} component={Link} to={text.toLowerCase().replace(' ', '-')}>
               <ListItemText primary={text} />
             </ListItem>
@@ -151,7 +154,6 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
 
 
 

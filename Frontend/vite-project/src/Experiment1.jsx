@@ -1,161 +1,126 @@
 
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import { motion } from 'framer-motion';
+
+
+import React, { useState, useEffect } from 'react';
 import { 
-  Container, 
-  Typography, 
-  Grid, 
+  Button, 
   Card, 
   CardContent, 
   CardMedia, 
-  Box,
-  Divider,
-  List,
-  ListItem,
-  ListItemText,
-  ListItemAvatar,
-  Avatar
+  Typography, 
+  Grid, 
+  Container, 
+  CircularProgress 
 } from '@mui/material';
-import { Home, Person, LocationOn } from '@mui/icons-material';
-import homeData from './homedata';
+import { styled } from '@mui/system';
 
-const getImageUrl = (imageName) => `/images/${imageName}`; // Assuming images are in public/images folder
+const StyledCard = styled(Card)(({ theme }) => ({
+  height: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  transition: 'transform 0.3s ease-in-out',
+  '&:hover': {
+    transform: 'scale(1.03)',
+  },
+}));
 
-const fadeIn = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1 }
-};
+const StyledCardMedia = styled(CardMedia)({
+  paddingTop: '56.25%', // 16:9 aspect ratio
+});
 
-export default function House() {
-  const { city: cityName, location: locationTitle } = useParams();
-  
-  const cityData = homeData.find((c) => c.cityName === cityName);
-  const locationData = cityData?.locations.find((l) => l.locationTitle === locationTitle);
+const Experiment1 = ({ gmail }) => {
+  const [userData, setUserData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  if (!cityData || !locationData) {
-    return (
-      <Container>
-        <Typography variant="h4" align="center" mt={4}>
-          Location not found
-        </Typography>
-      </Container>
-    );
-  }
+  const fetchUserData = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await fetch("http://localhost:4000/api/users/getdata", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: gmail }),
+      });
+      if (!response.ok) {
+        throw new Error('Failed to fetch user data');
+      }
+      const data = await response.json();
+      setUserData(data.userdata);
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    if (userData) {
+      console.log("User Data:", userData);
+    }
+  }, [userData]);
 
   return (
     <Container maxWidth="lg">
-      <motion.div initial="hidden" animate="visible" variants={fadeIn}>
-        <Typography variant="h3" component="h1" gutterBottom mt={4}>
-          {locationData.locationTitle}
+      <Button 
+        variant="contained" 
+        color="primary" 
+        onClick={fetchUserData} 
+        disabled={loading}
+        sx={{ my: 2 }}
+      >
+        {loading ? <CircularProgress size={24} color="inherit" /> : 'Fetch User Data'}
+      </Button>
+
+      {error && (
+        <Typography color="error" sx={{ my: 2 }}>
+          Error: {error}
         </Typography>
-        <Typography variant="body1" paragraph>
-          {locationData.locationDescription}
-        </Typography>
+      )}
 
-        {locationData.houses.map((house, index) => (
-          <Card key={index} elevation={3} sx={{ mb: 4 }}>
-            <CardContent>
-              <Typography variant="h5" component="h2" gutterBottom>
-                {house.houseTitle}
-              </Typography>
-              <Typography variant="body2" color="text.secondary" paragraph>
-                {house.houseDescription}
-              </Typography>
-              
-              <List>
-                <ListItem>
-                  <ListItemAvatar>
-                    <Avatar>
-                      <Home color="success"/>
-                    </Avatar>
-                  </ListItemAvatar>
-                  <ListItemText primary="Pricing" secondary={house.housePricing} />
-                </ListItem>
-                <ListItem>
-                  <ListItemAvatar>
-                    <Avatar>
-                      <LocationOn />
-                    </Avatar>
-                  </ListItemAvatar>
-                  <ListItemText primary="Address" secondary={house.address} />
-                </ListItem>
-                <ListItem>
-                  <ListItemAvatar>
-                    <Avatar>
-                      <Person />
-                    </Avatar>
-                  </ListItemAvatar>
-                  <ListItemText primary="Resident Manager" secondary={house.residentManager} />
-                </ListItem>
-              </List>
+      {userData && (
+        <>
+          <Typography variant="h4" component="h1" gutterBottom>
+            User Information
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            Email: {userData.email}
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            Phone: {userData.phone}
+          </Typography>
 
-              <Box sx={{ mt: 2 }}>
-                <Typography variant="h6" gutterBottom>
-                  House Images
-                </Typography>
-                <Grid container spacing={2}>
-                  {house.houseImages.map((image, idx) => (
-                    <Grid item xs={12} sm={6} md={4} key={idx}>
-                      <motion.div whileHover={{ scale: 1.05 }}>
-                        <CardMedia
-                          component="img"
-                          height="200"
-                          image={getImageUrl(image)}
-                          alt={`${house.houseTitle} image ${idx + 1}`}
-                          sx={{ borderRadius: 1 }}
-                        />
-                      </motion.div>
-                    </Grid>
-                  ))}
-                </Grid>
-              </Box>
-
-              <Divider sx={{ my: 3 }} />
-
-              <Typography variant="h6" gutterBottom>
-                Nearby Properties
-              </Typography>
-              <Grid container spacing={3}>
-                {house.nearbyProperties.map((property, idx) => (
-                  <Grid item xs={12} sm={6} key={idx}>
-                    <Card variant="outlined">
-                      <CardContent>
-                        <Typography variant="subtitle1" gutterBottom>
-                          {property.propertyTitle}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary" paragraph>
-                          {property.propertyDescription}
-                        </Typography>
-                        <Box sx={{ mt: 2 }}>
-                          <Grid container spacing={1}>
-                            {property.propertyImages.map((img, i) => (
-                              <Grid item xs={6} key={i}>
-                                <motion.div whileHover={{ scale: 1.05 }}>
-                                  <CardMedia
-                                    component="img"
-                                    height="100"
-                                    image={getImageUrl(img)}
-                                    alt={`${property.propertyTitle} image ${i + 1}`}
-                                    sx={{ borderRadius: 1 }}
-                                  />
-                                </motion.div>
-                              </Grid>
-                            ))}
-                          </Grid>
-                        </Box>
-                      </CardContent>
-                    </Card>
-                  </Grid>
-                ))}
+          <Typography variant="h5" component="h2" sx={{ mt: 4, mb: 2 }}>
+            User Images
+          </Typography>
+          <Grid container spacing={3}>
+            {userData.image.map((imgSrc, index) => (
+              <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+                <StyledCard>
+                  <StyledCardMedia
+                    image={imgSrc}
+                    title={`User Image ${index + 1}`}
+                  />
+                  <CardContent>
+                    <Typography variant="body2" color="text.secondary">
+                      Location: {userData.location[index]}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      Price: ${userData.pricing[index]}
+                    </Typography>
+                  </CardContent>
+                </StyledCard>
               </Grid>
-            </CardContent>
-          </Card>
-        ))}
-      </motion.div>
+            ))}
+          </Grid>
+        </>
+      )}
     </Container>
   );
-}
+};
+
+export default Experiment1;
+
 
 
 

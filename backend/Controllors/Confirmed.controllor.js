@@ -12,7 +12,7 @@ export default async function Confirme(req, res){
     try {
 
 
-  const{city, location,  pricing, name, email, phone} = req.body;
+  const{city, location,  pricing, name, email, phone, image} = req.body;
 
   const user = await User.findOne({email})
 
@@ -34,7 +34,9 @@ export default async function Confirme(req, res){
 
      email, 
 
-     phone
+     phone,
+
+     image
 
 
 
@@ -60,7 +62,9 @@ export default async function Confirme(req, res){
 
     confirmeddata.email = email,
 
-    confirmeddata.phone = phone
+    confirmeddata.phone = phone,
+
+    confirmeddata.image = [...confirmeddata.image, image]
 
 
 

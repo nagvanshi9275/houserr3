@@ -14,6 +14,11 @@ import { NoEncryptionGmailerrorredRounded } from "@mui/icons-material";
 
 import House from "./House";
 
+import Button from "./Button";
+
+
+import Experiment1 from "./Experiment1";
+
 export default function App() {
 
 const[message, setmessage] = React.useState("")
@@ -48,7 +53,7 @@ const[phone, setphone] = React.useState("")
 
           <Route path="/blog*" element={<Form setmessage={setmessage} setgmail={setgmail} setphone={setphone} />}/>
 
-         
+          <Route path="/button" element={<Experiment1 gmail={gmail}/>}></Route>
 
 
         </Routes>

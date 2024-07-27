@@ -77,7 +77,13 @@ export default function House({ message, gmail, phone }) {
             pricing: locationData.price2bhk,
             name: message,
             email: gmail,
-            phone: phone
+            phone: phone,
+            image: locationData.houseImages[0]
+           
+
+           
+
+          
           })
         });
 
@@ -87,6 +93,13 @@ export default function House({ message, gmail, phone }) {
           console.log(`${message}, your home is now confirmed. Our team will reach out to you soon.`);
           console.log('Response Data:', data); // Log response data for debugging
           setPopupVisible(true); // Show the popup on successful booking
+
+         navigate('/button')
+
+        
+
+
+
         } else {
           console.error('Response Error:', data); // Log any errors from the response
         }

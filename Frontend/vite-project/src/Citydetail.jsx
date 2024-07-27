@@ -28,6 +28,8 @@ export default function Citydetail({ message, gmail }) {
   const navigate = useNavigate();
   const city = homeData.find((city) => city.cityName === cityName);
 
+  const[photo, setphoto] = useState()
+
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredLocations, setFilteredLocations] = useState(city ? city.locations : []);
   const [imageIndexes, setImageIndexes] = useState(
@@ -82,6 +84,10 @@ export default function Citydetail({ message, gmail }) {
 
       if (response.ok) {
         console.log(message, "your home are added soon our team reachout to you");
+
+        console.log(location.houseImages[0])
+
+        setphoto(location.houseImages[0])
       }
     } catch (error) {
       console.log(error.message);
@@ -189,12 +195,6 @@ export default function Citydetail({ message, gmail }) {
     </Container>
   );
 }
-
-
-
-
-
-
 
 
 

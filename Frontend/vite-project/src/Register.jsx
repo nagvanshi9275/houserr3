@@ -1,7 +1,6 @@
 
 
 
-// src/components/Register.js
 import React, { useState } from 'react';
 import { TextField, Button, Container, Typography, Box } from '@mui/material';
 import { useNavigate } from 'react-router-dom'; // Step 1: Import useNavigate
@@ -128,6 +127,9 @@ const Register = ({setmessage, setgmail, setphone}) => {
 };
 
 export default Register;
+
+
+
 
 
 

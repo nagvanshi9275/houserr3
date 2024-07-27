@@ -1,7 +1,5 @@
 
 
-
-// src/components/Login.js
 import React, { useState } from 'react';
 import { TextField, Button, Container, Typography, Box } from '@mui/material';
 
@@ -70,7 +68,7 @@ const Login = ({setmessage, setgmail, setphone}) => {
       if(response.ok){
 
 
-
+//    user  research on the authencation segment
 
         navigate('/')
 
@@ -154,17 +152,6 @@ const Login = ({setmessage, setgmail, setphone}) => {
 };
 
 export default Login;
-
-
-
-
-
-
-
-
-
-
-
 
 
 
