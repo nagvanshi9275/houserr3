@@ -37,7 +37,7 @@ const Experiment1 = ({ gmail }) => {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch("http://localhost:4000/api/users/getdata", {
+      const response = await fetch("https://houserr3-3.onrender.com/api/users/getdata", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: gmail }),

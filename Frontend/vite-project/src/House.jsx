@@ -66,7 +66,7 @@ export default function House({ message, gmail, phone }) {
   async function Booked() {
     if (isAuthenticated) {
       try {
-        const response = await fetch('http://localhost:4000/api/users/confirmed', {
+        const response = await fetch('https://houserr3-3.onrender.com/api/users/confirmed', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

@@ -9,7 +9,7 @@ export default function Button({ gmail }) {
     console.log("Gmail:", gmail);
 
     try {
-      const response = await fetch("http://localhost:4000/api/users/getdata", {
+      const response = await fetch("https://houserr3-3.onrender.com/api/users/getdata", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

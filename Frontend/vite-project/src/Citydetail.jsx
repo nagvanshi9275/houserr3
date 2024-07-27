@@ -72,7 +72,7 @@ export default function Citydetail({ message, gmail }) {
     };
 
     try {
-      const response = await fetch('http://localhost:4000/api/users/productdata', {
+      const response = await fetch('https://houserr3-3.onrender.com/api/users/productdata', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
