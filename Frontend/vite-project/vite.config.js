@@ -12,13 +12,11 @@ export default defineConfig({
       '@mui/icons-material': '@mui/icons-material/esm',
     },
   },
+  build: {
+    outDir: 'dist',
+  },
+  base: './',
 })
-
-
-
-
-
-
 
 
 
