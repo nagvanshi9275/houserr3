@@ -1,12 +1,14 @@
 
 
+
+
 import React, { useState } from 'react';
 import { TextField, Button, Container, Typography, Box } from '@mui/material';
 
 
 import { useNavigate } from 'react-router-dom';
 
-const Login = ({setmessage, setgmail, setphone}) => {
+const Login = ({setmessage, setgmail, setphone, setIsRegistered }) => {
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -81,6 +83,9 @@ const Login = ({setmessage, setgmail, setphone}) => {
         setphone(data.phone)
 
         console.log(data)
+
+
+        setIsRegistered(true)
 
 
       }

@@ -7,7 +7,7 @@ import { Button, Box, Container } from '@mui/material';
 import Login from "./Login";
 import Register from "./Register";
 
-export default function Form({setmessage, setgmail, setphone}) {
+export default function Form({setmessage, setgmail, setphone , setIsRegistered }) {
   const [show, setShow] = React.useState(false);
   const [dark, setDark] = React.useState(true);
   const navigate = useNavigate(); // Use the useNavigate hook
@@ -16,14 +16,14 @@ export default function Form({setmessage, setgmail, setphone}) {
     console.log("register route");
     setDark(false);
     setShow(true);
-    navigate("/blog/register"); // Navigate to the register route
+    navigate("/login/register"); // Navigate to the register route
   };
 
   const handleLogin = () => {
     console.log("login");
     setShow(false);
     setDark(true);
-    navigate("/blog/"); // Navigate to the login route
+    navigate("/login/"); // Navigate to the login route
   };
 
   return (
@@ -34,8 +34,8 @@ export default function Form({setmessage, setgmail, setphone}) {
 
       <Box my={4} textAlign="center">
         <Routes>
-          <Route path="/register" element={<Register setmessage={setmessage} setgmail={setgmail} setphone={setphone}/>} />
-          <Route path="/" element={<Login setmessage={setmessage} setgmail={setgmail} setphone={setphone} />} />
+          <Route path="/register" element={<Register setmessage={setmessage} setgmail={setgmail} setphone={setphone}  setIsRegistered={setIsRegistered}/>} />
+          <Route path="/" element={<Login setmessage={setmessage} setgmail={setgmail} setphone={setphone}  setIsRegistered={ setIsRegistered} />} />
         </Routes>
         
         <Box display="flex" justifyContent="center" mt={2}>

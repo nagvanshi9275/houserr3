@@ -1,6 +1,7 @@
 
 
 
+
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -21,7 +22,7 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import { Link } from 'react-router-dom';
 
-const NavBar = () => {
+const NavBar = ({ isRegistered }) => { // Step 2: Receive isRegistered as a prop
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
@@ -81,11 +82,14 @@ const NavBar = () => {
               ))}
             </List>
           )}
-          {['Privillage', 'How to Book', 'login'].map((text) => (
+          {['Privillage', 'How to Book'].map((text) => (
             <ListItem button key={text} component={Link} to={text.toLowerCase().replace(' ', '-')}>
               <ListItemText primary={text} />
             </ListItem>
           ))}
+          <ListItem button component={Link} to={isRegistered ? '/button' : '/login'}>
+            <ListItemText primary={isRegistered ? 'Your Product' : 'Login'} />
+          </ListItem>
           <ListItem>
             <Button variant="contained" color="primary">
               Request Call
@@ -135,7 +139,10 @@ const NavBar = () => {
                     {cityMenu}
                     <Button color="inherit" component={Link} to="/privillage">Privillage</Button>
                     <Button color="inherit" component={Link} to="/how-to-book">How to Book</Button>
-                    <Button color="inherit" component={Link} to="/login">Login</Button>
+                    {/* Conditionally render "Your Product" or "Login" */}
+                    <Button color="inherit" component={Link} to={isRegistered ? '/button' : '/login'}>
+                      {isRegistered ? 'Your Product' : 'Login'}
+                    </Button>
                     <Button variant="contained" color="primary">
                       Request Call
                     </Button>

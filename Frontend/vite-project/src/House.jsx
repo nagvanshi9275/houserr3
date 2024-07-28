@@ -94,7 +94,7 @@ export default function House({ message, gmail, phone }) {
           console.log('Response Data:', data); // Log response data for debugging
           setPopupVisible(true); // Show the popup on successful booking
 
-         navigate('/button')
+         //navigate('/button')
 
         
 
@@ -108,7 +108,7 @@ export default function House({ message, gmail, phone }) {
       }
     } else {
       console.warn("Please register or log in first.");
-      navigate('/blog'); // Navigate to a registration or login page
+      navigate('/login'); // Navigate to a registration or login page
     }
   }
 

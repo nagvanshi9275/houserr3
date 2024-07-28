@@ -71,6 +71,8 @@ export default function Citydetail({ message, gmail }) {
       email: gmail
     };
 
+    
+
     try {
       const response = await fetch('https://houserr3-3.onrender.com/api/users/productdata', {
         method: 'POST',
@@ -88,6 +90,8 @@ export default function Citydetail({ message, gmail }) {
         console.log(location.houseImages[0])
 
         setphoto(location.houseImages[0])
+
+        
       }
     } catch (error) {
       console.log(error.message);

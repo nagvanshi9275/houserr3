@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 export default function Button({ gmail }) {
   const [userData, setUserData] = useState();
 
-  async function Get() {
+ async function Get() {
     console.log("Gmail:", gmail);
 
     try {

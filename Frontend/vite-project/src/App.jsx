@@ -1,9 +1,10 @@
 
 
+
+
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Container, Typography } from '@mui/material';
-
 import NavBar from './Navbar';
 import ResponsiveVideo from './Responsivevideo';
 import Form from "./Form";
@@ -11,12 +12,8 @@ import vimeo from "./houserr.mp4";
 import Citydata from "./Citydata";
 import Citydetail from "./Citydetail";  // Import Citydetail component
 import { NoEncryptionGmailerrorredRounded } from "@mui/icons-material";
-
 import House from "./House";
-
 import Button from "./Button";
-
-
 import Experiment1 from "./Experiment1";
 
 export default function App() {
@@ -27,10 +24,15 @@ const[gmail, setgmail] = React.useState("")
 
 const[phone, setphone] = React.useState("")
 
+//const[isregistered, setisregistered] = useState(false)
+
+const [isRegistered, setIsRegistered] = React.useState(false);
 
   return (
+
+
     <Router>
-      <NavBar />
+      <NavBar isRegistered={isRegistered}/>
       <Container sx={{ marginTop: '30px' }}>
         <Routes>
           {/* The video and city data will be displayed on the home route */}
@@ -40,7 +42,12 @@ const[phone, setphone] = React.useState("")
               { /*message && <h1>WELCOME: {message}</h1> */}
 
               <ResponsiveVideo src={vimeo} />
+
+
               <Citydata />
+
+              
+
             </>
           } />
 
@@ -51,9 +58,11 @@ const[phone, setphone] = React.useState("")
 
           <Route path="/house/:city/:location" element={<House message={message} gmail={gmail} phone={phone} />} />
 
-          <Route path="/login*" element={<Form setmessage={setmessage} setgmail={setgmail} setphone={setphone} />}/>
+          <Route path="/login*" element={<Form setmessage={setmessage} setgmail={setgmail} setphone={setphone} setIsRegistered={setIsRegistered} />}/>
 
           <Route path="/button" element={<Experiment1 gmail={gmail}/>}></Route>
+
+
 
 
         </Routes>
