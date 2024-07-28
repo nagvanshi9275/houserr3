@@ -37,7 +37,7 @@ const[phone, setphone] = React.useState("")
           <Route path="/" element={
             <>
 
-              {message && <h1>WELCOME: {message}</h1>}
+              { /*message && <h1>WELCOME: {message}</h1> */}
 
               <ResponsiveVideo src={vimeo} />
               <Citydata />
@@ -51,7 +51,7 @@ const[phone, setphone] = React.useState("")
 
           <Route path="/house/:city/:location" element={<House message={message} gmail={gmail} phone={phone} />} />
 
-          <Route path="/blog*" element={<Form setmessage={setmessage} setgmail={setgmail} setphone={setphone} />}/>
+          <Route path="/login*" element={<Form setmessage={setmessage} setgmail={setgmail} setphone={setphone} />}/>
 
           <Route path="/button" element={<Experiment1 gmail={gmail}/>}></Route>
 

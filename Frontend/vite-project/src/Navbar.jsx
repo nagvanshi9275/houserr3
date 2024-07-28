@@ -135,7 +135,7 @@ const NavBar = () => {
                     {cityMenu}
                     <Button color="inherit" component={Link} to="/privillage">Privillage</Button>
                     <Button color="inherit" component={Link} to="/how-to-book">How to Book</Button>
-                    <Button color="inherit" component={Link} to="/blog">Login</Button>
+                    <Button color="inherit" component={Link} to="/login">Login</Button>
                     <Button variant="contained" color="primary">
                       Request Call
                     </Button>
