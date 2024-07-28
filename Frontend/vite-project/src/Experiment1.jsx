@@ -1,6 +1,5 @@
 
 
-
 import React, { useState, useEffect } from 'react';
 import { 
   Button, 
@@ -14,6 +13,7 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/system';
 
+// Styled components for the Card and CardMedia
 const StyledCard = styled(Card)(({ theme }) => ({
   height: '100%',
   display: 'flex',
@@ -33,6 +33,7 @@ const Experiment1 = ({ gmail }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  // Function to fetch user data from the API
   const fetchUserData = async () => {
     setLoading(true);
     setError(null);
@@ -42,9 +43,11 @@ const Experiment1 = ({ gmail }) => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: gmail }),
       });
+
       if (!response.ok) {
         throw new Error('Failed to fetch user data');
       }
+
       const data = await response.json();
       setUserData(data.userdata);
     } catch (error) {
@@ -54,6 +57,12 @@ const Experiment1 = ({ gmail }) => {
     }
   };
 
+  // useEffect to fetch data when the component mounts
+  useEffect(() => {
+    fetchUserData();
+  }, []); // Empty dependency array to run once on mount
+
+  // Log user data whenever it changes
   useEffect(() => {
     if (userData) {
       console.log("User Data:", userData);
@@ -62,22 +71,19 @@ const Experiment1 = ({ gmail }) => {
 
   return (
     <Container maxWidth="lg">
-      <Button 
-        variant="contained" 
-        color="primary" 
-        onClick={fetchUserData} 
-        disabled={loading}
-        sx={{ my: 2 }}
-      >
-        {loading ? <CircularProgress size={24} color="inherit" /> : 'Fetch User Data'}
-      </Button>
+      {/* Show loading spinner while fetching data */}
+      {loading && (
+        <CircularProgress size={24} color="inherit" sx={{ my: 2 }} />
+      )}
 
+      {/* Display error message if there's an error */}
       {error && (
         <Typography color="error" sx={{ my: 2 }}>
           Error: {error}
         </Typography>
       )}
 
+      {/* Display user data if available */}
       {userData && (
         <>
           <Typography variant="h4" component="h1" gutterBottom>
@@ -120,6 +126,9 @@ const Experiment1 = ({ gmail }) => {
 };
 
 export default Experiment1;
+
+
+
 
 
 
