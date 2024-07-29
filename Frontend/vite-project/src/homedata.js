@@ -53,7 +53,7 @@ const homeData = [
   locationDescription: "A well-planned residential area with good connectivity.",
   houseImages: ["https://i.postimg.cc/05DRb90k/anna1.jpg", "https://i.postimg.cc/t41z44FD/anna2.jpg", "https://i.postimg.cc/1Xq9z65s/anna3.jpg", "https://i.postimg.cc/RCDd5tHq/anna4.jpg"],
   pricing: "Starting from ₹1 crore",
-  price2bhk: "300000",
+  price2bhk: "450000",
   price3bhk: "7000000",
 
   houses: [
@@ -89,7 +89,7 @@ const homeData = [
   locationDescription: "A well-planned residential area with good connectivity.",
   houseImages: ["https://i.postimg.cc/SQck4QVy/6-Sophisticated-Dark-Bedroom-Themes-for-Chic-and-Comfortable-Homes-333-Art-Images.jpg", "https://i.postimg.cc/t41z44FD/anna2.jpg", "https://i.postimg.cc/1Xq9z65s/anna3.jpg", "https://i.postimg.cc/RCDd5tHq/anna4.jpg"],
   pricing: "Starting from ₹10 crore",
-  price2bhk: "300000",
+  price2bhk: "870000",
   price3bhk: "7000000",
 
   houses: [
@@ -126,7 +126,7 @@ const homeData = [
   locationDescription: "A well-planned residential area with good connectivity.",
   houseImages: ["https://i.postimg.cc/05DRb90k/anna1.jpg", "https://i.postimg.cc/t41z44FD/anna2.jpg", "https://i.postimg.cc/1Xq9z65s/anna3.jpg", "https://i.postimg.cc/RCDd5tHq/anna4.jpg"],
   pricing: "Starting from ₹1 crore",
-  price2bhk: "300000",
+  price2bhk: "980000",
   price3bhk: "7000000",
 
   houses: [
@@ -162,7 +162,7 @@ const homeData = [
   locationDescription: "A well-planned residential area with good connectivity.",
   houseImages: ["https://i.postimg.cc/QxcKKrbm/hag1.jpg", "https://i.postimg.cc/t41z44FD/anna2.jpg", "https://i.postimg.cc/1Xq9z65s/anna3.jpg", "https://i.postimg.cc/RCDd5tHq/anna4.jpg"],
   pricing: "Starting from ₹16 crore",
-  price2bhk: "300000",
+  price2bhk: "590000",
   price3bhk: "7000000",
 
   houses: [
@@ -198,7 +198,7 @@ const homeData = [
   locationDescription: "A well-planned residential area with good connectivity.",
   houseImages: ["https://i.postimg.cc/qMmgWXkf/hag2.jpg", "https://i.postimg.cc/t41z44FD/anna2.jpg", "https://i.postimg.cc/1Xq9z65s/anna3.jpg", "https://i.postimg.cc/RCDd5tHq/anna4.jpg"],
   pricing: "Starting from ₹1 crore",
-  price2bhk: "300000",
+  price2bhk: "134000",
   price3bhk: "7000000",
 
   houses: [
@@ -234,7 +234,7 @@ const homeData = [
   locationDescription: "A well-planned residential area with good connectivity.",
   houseImages: ["https://i.postimg.cc/x8DFfznn/hag3.jpg", "https://i.postimg.cc/t41z44FD/anna2.jpg", "https://i.postimg.cc/1Xq9z65s/anna3.jpg", "https://i.postimg.cc/RCDd5tHq/anna4.jpg"],
   pricing: "Starting from ₹1 crore",
-  price2bhk: "300000",
+  price2bhk: "876000",
   price3bhk: "7000000",
 
   houses: [
@@ -271,7 +271,7 @@ const homeData = [
   locationDescription: "A well-planned residential area with good connectivity.",
   houseImages: ["https://i.postimg.cc/5Nnd3sfz/hag4.jpg", "https://i.postimg.cc/t41z44FD/anna2.jpg", "https://i.postimg.cc/1Xq9z65s/anna3.jpg", "https://i.postimg.cc/RCDd5tHq/anna4.jpg"],
   pricing: "Starting from ₹1 crore",
-  price2bhk: "300000",
+  price2bhk: "980000",
   price3bhk: "7000000",
 
   houses: [
@@ -309,7 +309,7 @@ const homeData = [
   locationDescription: "A well-planned residential area with good connectivity.",
   houseImages: ["https://i.postimg.cc/05DRb90k/anna1.jpg", "https://i.postimg.cc/t41z44FD/anna2.jpg", "https://i.postimg.cc/1Xq9z65s/anna3.jpg", "https://i.postimg.cc/RCDd5tHq/anna4.jpg"],
   pricing: "Starting from ₹1 crore",
-  price2bhk: "300000",
+  price2bhk: "907000",
   price3bhk: "7000000",
 
   houses: [

@@ -16,6 +16,8 @@ import House from "./House";
 import Button from "./Button";
 import Experiment1 from "./Experiment1";
 
+import MapComponent from "./MapComponent";
+
 export default function App() {
 
 const[message, setmessage] = React.useState("")
@@ -45,6 +47,8 @@ const [isRegistered, setIsRegistered] = React.useState(false);
 
 
               <Citydata />
+
+              <MapComponent/>
 
               
 

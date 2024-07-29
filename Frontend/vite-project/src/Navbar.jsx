@@ -1,7 +1,4 @@
-
-
-
-
+// NavBar.jsx
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -20,11 +17,12 @@ import ListItemText from '@mui/material/ListItemText';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-const NavBar = ({ isRegistered }) => { // Step 2: Receive isRegistered as a prop
+const NavBar = ({ isRegistered }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const navigate = useNavigate(); // Use useNavigate hook from react-router-dom
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [drawerOpen, setDrawerOpen] = React.useState(false);
@@ -50,7 +48,14 @@ const NavBar = ({ isRegistered }) => { // Step 2: Receive isRegistered as a prop
     setDrawerOpen(open);
   };
 
-  const cityOptions = ['Pune', 'Hyderabad', 'Kolkata', 'Patliputra'];
+  const cityOptions = ['Chennai', 'Pune', 'Bangalore', 'Delhi'];
+
+  const handleCityClick = (city) => {
+    // Convert city name to lowercase and remove spaces if any
+    const cityRoute = city.replace(' ', '-');
+    navigate(`/${cityRoute}`);
+    handleCityMenuClose(); // Close the menu after navigation
+  };
 
   const cityMenu = (
     <Menu
@@ -59,7 +64,7 @@ const NavBar = ({ isRegistered }) => { // Step 2: Receive isRegistered as a prop
       onClose={handleCityMenuClose}
     >
       {cityOptions.map((city) => (
-        <MenuItem key={city} onClick={handleCityMenuClose}>
+        <MenuItem key={city} onClick={() => handleCityClick(city)}>
           {city}
         </MenuItem>
       ))}
@@ -76,7 +81,7 @@ const NavBar = ({ isRegistered }) => { // Step 2: Receive isRegistered as a prop
           {showCityInDrawer && (
             <List component="div" disablePadding>
               {cityOptions.map((city) => (
-                <ListItem button key={city} sx={{ pl: 4 }} onClick={handleCityMenuClose}>
+                <ListItem button key={city} sx={{ pl: 4 }} onClick={() => handleCityClick(city)}>
                   <ListItemText primary={city} />
                 </ListItem>
               ))}
@@ -127,7 +132,7 @@ const NavBar = ({ isRegistered }) => { // Step 2: Receive isRegistered as a prop
                 <Grid item xs={12} md={3}>
                   <Typography variant="h6" component="div">
                     <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-                      Roomyo
+                      Roomoyo
                     </Link>
                   </Typography>
                 </Grid>
@@ -161,10 +166,3 @@ const NavBar = ({ isRegistered }) => { // Step 2: Receive isRegistered as a prop
 };
 
 export default NavBar;
-
-
-
-
-
-
-

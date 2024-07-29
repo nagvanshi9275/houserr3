@@ -1,9 +1,7 @@
 
 
-
-
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { 
   Container, 
   Grid, 
@@ -16,34 +14,27 @@ import {
   TextField,
   InputAdornment,
   Paper,
-  Box
+  Box,
+  Button
 } from "@mui/material";
 import { ArrowForward, Search, Clear } from "@mui/icons-material";
 import homeData from "./homedata";
-import { Button } from '@mui/material';
-import { useNavigate, Link } from "react-router-dom";
 
 export default function Citydetail({ message, gmail }) {
   const { cityName } = useParams();
   const navigate = useNavigate();
   const city = homeData.find((city) => city.cityName === cityName);
 
-  const[photo, setphoto] = useState()
-
+  const [photo, setPhoto] = useState();
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredLocations, setFilteredLocations] = useState(city ? city.locations : []);
-  const [imageIndexes, setImageIndexes] = useState(
-    city ? city.locations.map(() => 0) : []
-  );
+  const [imageIndexes, setImageIndexes] = useState(city ? city.locations.map(() => 0) : []);
+  const [priceRange, setPriceRange] = useState("");
 
+  // Filter locations whenever city, search query, or price range changes
   useEffect(() => {
-    if (city) {
-      const filtered = city.locations.filter((location) =>
-        location.locationTitle.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-      setFilteredLocations(filtered);
-    }
-  }, [searchQuery, city]);
+    filterLocations();
+  }, [searchQuery, priceRange, city]);
 
   const handleChange = (e) => {
     setSearchQuery(e.target.value);
@@ -51,6 +42,36 @@ export default function Citydetail({ message, gmail }) {
 
   const handleClearSearch = () => {
     setSearchQuery("");
+  };
+
+  const handlePriceRangeChange = (e) => {
+    setPriceRange(e.target.value);
+  };
+
+  const filterLocations = () => {
+    if (!city) return;
+
+    const filtered = city.locations.filter((location) => {
+      const matchQuery = location.locationTitle.toLowerCase().includes(searchQuery.toLowerCase());
+
+      if (!priceRange) return matchQuery;
+
+      const [minPrice, maxPrice] = priceRange.split('-').map(Number);
+      
+      // Logging to debug the filtering logic
+      console.log(`Filtering ${location.locationTitle}:`, {
+        locationPrice: location.price2bhk,
+        minPrice,
+        maxPrice,
+        matchPrice: location.price2bhk >= minPrice && location.price2bhk <= maxPrice
+      });
+
+      const matchPrice = location.price2bhk >= minPrice && location.price2bhk <= maxPrice;
+
+      return matchQuery && matchPrice;
+    });
+
+    setFilteredLocations(filtered);
   };
 
   const handleNextImage = (locationIndex) => {
@@ -66,12 +87,9 @@ export default function Citydetail({ message, gmail }) {
       product: city.cityName,
       location: location.locationTitle,
       pricing2Bhk: location.price2bhk,
-      pricing3Bhk: location.price3bhk,
       name: message,
       email: gmail
     };
-
-    
 
     try {
       const response = await fetch('https://houserr3-3.onrender.com/api/users/productdata', {
@@ -85,13 +103,11 @@ export default function Citydetail({ message, gmail }) {
       const data = await response.json();
 
       if (response.ok) {
-        console.log(message, "your home are added soon our team reachout to you");
+        console.log(message, "your home will be added soon. Our team will reach out to you.");
 
-        console.log(location.houseImages[0])
+        console.log(location.houseImages[0]);
 
-        setphoto(location.houseImages[0])
-
-        
+        setPhoto(location.houseImages[0]);
       }
     } catch (error) {
       console.log(error.message);
@@ -110,8 +126,8 @@ export default function Citydetail({ message, gmail }) {
           {city.cityDescription}
         </Typography>
       </Box>
-      
-      <Paper elevation={3} sx={{ p: 2, mb: 4 }}>
+
+      <Box display="flex" justifyContent="space-between" alignItems="center" mb={4}>
         <TextField
           fullWidth
           variant="outlined"
@@ -140,7 +156,24 @@ export default function Citydetail({ message, gmail }) {
             },
           }}
         />
-      </Paper>
+
+        <Box ml={2}>
+          <TextField
+            select
+            label="select price"
+            value={priceRange}
+            onChange={handlePriceRangeChange}
+            SelectProps={{
+              native: true,
+            }}
+          >
+            <option value="">select price</option>
+            <option value="200000-300000">200000-300000</option>
+            <option value="450000-500000">450000-500000</option>
+            <option value="900000-1000000">900000-1000000</option>
+          </TextField>
+        </Box>
+      </Box>
 
       <Grid container spacing={3}>
         {filteredLocations.length > 0 ? (
@@ -161,7 +194,7 @@ export default function Citydetail({ message, gmail }) {
                     {location.locationDescription}
                   </Typography>
                   <Typography variant="body1" color="textPrimary">
-                    {location.pricing}
+                    2BHK: {location.price2bhk}
                   </Typography>
                   <Link to={`/house/${city.cityName}/${location.locationTitle}`}>
                     <Button onClick={() => Buy(location)} variant="contained" color="warning">
@@ -199,6 +232,14 @@ export default function Citydetail({ message, gmail }) {
     </Container>
   );
 }
+
+
+
+
+
+
+
+
 
 
 
