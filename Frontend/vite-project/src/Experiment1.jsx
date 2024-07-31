@@ -57,17 +57,17 @@ const Experiment1 = ({ gmail }) => {
     }
   };
 
-  // useEffect to fetch data when the component mounts
+  
   useEffect(() => {
     fetchUserData();
-  }, []); // Empty dependency array to run once on mount
-
-  // Log user data whenever it changes
+  }, []); 
 
 
 
 
-  // little bit issue in large to medium device. 
+
+
+   
   useEffect(() => {
     if (userData) {
       console.log("User Data:", userData);
@@ -76,7 +76,7 @@ const Experiment1 = ({ gmail }) => {
 
   return (
     <Container maxWidth="lg">
-      {/* Show loading spinner while fetching data */}
+      {}
       {loading && (
         <CircularProgress size={24} color="inherit" sx={{ my: 2 }} />
       )}
@@ -131,6 +131,81 @@ const Experiment1 = ({ gmail }) => {
 };
 
 export default Experiment1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

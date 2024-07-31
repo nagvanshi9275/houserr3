@@ -18,6 +18,8 @@ import Experiment1 from "./Experiment1";
 
 import MapComponent from "./MapComponent";
 
+import Footer from "./Footer"
+
 export default function App() {
 
 const[message, setmessage] = React.useState("")
@@ -49,6 +51,8 @@ const [isRegistered, setIsRegistered] = React.useState(false);
               <Citydata />
 
               <MapComponent/>
+
+              <Footer/>
 
               
 

@@ -8,6 +8,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import AccountCircle from '@mui/icons-material/AccountCircle'; // Import the AccountCircle icon
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Drawer from '@mui/material/Drawer';
@@ -93,7 +94,11 @@ const NavBar = ({ isRegistered }) => {
             </ListItem>
           ))}
           <ListItem button component={Link} to={isRegistered ? '/button' : '/login'}>
-            <ListItemText primary={isRegistered ? 'Your Product' : 'Login'} />
+            {isRegistered ? (
+              <AccountCircle color="inherit" />
+            ) : (
+              <ListItemText primary="Login" />
+            )}
           </ListItem>
           <ListItem>
             <Button variant="contained" color="primary">
@@ -144,10 +149,10 @@ const NavBar = ({ isRegistered }) => {
                     {cityMenu}
                     <Button color="inherit" component={Link} to="/privillage">Privillage</Button>
                     <Button color="inherit" component={Link} to="/how-to-book">How to Book</Button>
-                    {/* Conditionally render "Your Product" or "Login" */}
-                    <Button color="inherit" component={Link} to={isRegistered ? '/button' : '/login'}>
-                      {isRegistered ? 'Your Product' : 'Login'}
-                    </Button>
+                    {/* Conditionally render the AccountCircle icon or "Login" */}
+                    <IconButton color="inherit" component={Link} to={isRegistered ? '/button' : '/login'}>
+                      {isRegistered ? <AccountCircle /> : <Typography>Login</Typography>}
+                    </IconButton>
                     <Button variant="contained" color="primary">
                       Request Call
                     </Button>
