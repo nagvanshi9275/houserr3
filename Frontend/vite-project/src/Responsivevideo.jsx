@@ -1,6 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { IconButton, TextField, Typography } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
 
 const ResponsiveVideo = ({ src }) => {
+  const [placeholders, setPlaceholders] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    // Add placeholders to the list
+    setPlaceholders(['Search home', 'Search location', 'Search place']);
+    
+    // Rotate through placeholders
+    const interval = setInterval(() => {
+      setCurrentIndex(prevIndex => (prevIndex + 1) % placeholders.length);
+    }, 2000); // Change placeholder every 2 seconds
+
+    // Clean up interval on component unmount
+    return () => clearInterval(interval);
+  }, [placeholders.length]);
+
   return (
     <div
       style={{
@@ -8,9 +26,8 @@ const ResponsiveVideo = ({ src }) => {
         width: '100%',
         height: '0',
         paddingBottom: '56.25%', // 16:9 aspect ratio
-        
-        marginTop: '-30px',
         overflow: 'hidden',
+        marginTop: '-26px', // Adjust top margin
       }}
     >
       <div
@@ -19,7 +36,7 @@ const ResponsiveVideo = ({ src }) => {
           top: 0,
           left: 0,
           width: '100%',
-          height: '90%',
+          height: '100%',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
@@ -40,16 +57,95 @@ const ResponsiveVideo = ({ src }) => {
           Your browser does not support the video tag.
         </video>
       </div>
+      <div
+        style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          width: '80%',
+          maxWidth: '600px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <div
+          style={{
+            position: 'relative',
+            width: '100%',
+          }}
+        >
+          <TextField
+            variant="outlined"
+            placeholder={placeholders[currentIndex]}
+            InputProps={{
+              endAdornment: (
+                <IconButton
+                  style={{
+                    padding: 0,
+                    color: 'white',
+                    backgroundColor: 'red',
+                    borderRadius: '25px',
+                    marginLeft: '-1px', // Overlap with the input border
+                    height: '100%', // Match height with the input field
+                    display: 'flex',
+                    alignItems: 'center',
+                  }}
+                >
+                  <SearchIcon />
+                  <Typography
+                    style={{
+                      marginLeft: '5px',
+                      fontSize: '16px',
+                      color: 'white',
+                    }}
+                  >
+                    Search
+                  </Typography>
+                </IconButton>
+              ),
+              style: {
+                padding: '10px 15px',
+                borderRadius: '25px',
+                backgroundColor: 'rgba(255, 255, 255, 0.8)', // Semi-transparent background
+              },
+            }}
+            fullWidth
+            style={{
+              width: '100%',
+            }}
+          />
+        </div>
+      </div>
       <style>
         {`
           @media (max-width: 768px) {
             div {
               paddingBottom: 75%; // Adjust aspect ratio for smaller screens
             }
+            .MuiInputBase-input {
+              font-size: 14px;
+            }
+            .MuiIconButton-root {
+              font-size: 14px;
+            }
+            .MuiTypography-root {
+              font-size: 14px;
+            }
           }
           @media (max-width: 480px) {
             div {
               paddingBottom: 100%; // Further adjust for very small screens
+            }
+            .MuiInputBase-input {
+              font-size: 12px;
+            }
+            .MuiIconButton-root {
+              font-size: 12px;
+            }
+            .MuiTypography-root {
+              font-size: 12px;
             }
           }
         `}
@@ -59,3 +155,15 @@ const ResponsiveVideo = ({ src }) => {
 };
 
 export default ResponsiveVideo;
+
+
+
+
+
+
+
+
+
+
+
+

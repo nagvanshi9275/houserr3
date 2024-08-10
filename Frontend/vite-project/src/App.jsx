@@ -14,7 +14,13 @@ import Citydetail from "./Citydetail";  // Import Citydetail component
 import { NoEncryptionGmailerrorredRounded } from "@mui/icons-material";
 import House from "./House";
 import Button from "./Button";
+
 import Experiment1 from "./Experiment1";
+
+import gig from "./WhatsApp Video 2024-08-10 at 00.03.21 (1).mp4";
+
+import Mid from "./Mid";
+
 
 export default function App() {
 
@@ -41,7 +47,9 @@ const [isRegistered, setIsRegistered] = React.useState(false);
 
               { /*message && <h1>WELCOME: {message}</h1> */}
 
-              <ResponsiveVideo src={vimeo} />
+              <ResponsiveVideo src={gig} />
+
+              <Mid/>
 
 
               <Citydata />

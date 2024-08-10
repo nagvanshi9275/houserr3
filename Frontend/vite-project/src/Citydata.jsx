@@ -6,7 +6,7 @@ import homeData from "./homedata";
 
 export default function Citydata() {
   return (
-    <Container>
+    <Container sx={{ marginTop: 4 }}> {/* Adjust marginTop value as needed */}
       <Grid container spacing={3}>
         {homeData.map((city, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>

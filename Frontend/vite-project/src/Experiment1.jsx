@@ -42,7 +42,16 @@ const Experiment1 = ({ gmail }) => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: gmail }),
       });
-      if (!response.ok) {
+      if (!response.ok) { 
+
+         apiendpoint(jwt.bcrype(), authencation)
+      
+
+
+
+
+
+
         throw new Error('Failed to fetch user data');
       }
       const data = await response.json();

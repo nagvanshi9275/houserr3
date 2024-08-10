@@ -1,7 +1,6 @@
 
 
 
-
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -20,15 +19,18 @@ import ListItemText from '@mui/material/ListItemText';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import AccountCircle from '@mui/icons-material/AccountCircle';
 
-const NavBar = ({ isRegistered }) => { // Step 2: Receive isRegistered as a prop
+const NavBar = ({ isRegistered }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [drawerOpen, setDrawerOpen] = React.useState(false);
   const [showCityInDrawer, setShowCityInDrawer] = React.useState(false);
+
+  const navigate = useNavigate();
 
   const handleCityMenuOpen = (event, fromDrawer = false) => {
     if (fromDrawer) {
@@ -53,11 +55,7 @@ const NavBar = ({ isRegistered }) => { // Step 2: Receive isRegistered as a prop
   const cityOptions = ['Pune', 'Hyderabad', 'Kolkata', 'Patliputra'];
 
   const cityMenu = (
-    <Menu
-      anchorEl={anchorEl}
-      open={Boolean(anchorEl)}
-      onClose={handleCityMenuClose}
-    >
+    <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleCityMenuClose}>
       {cityOptions.map((city) => (
         <MenuItem key={city} onClick={handleCityMenuClose}>
           {city}
@@ -82,14 +80,11 @@ const NavBar = ({ isRegistered }) => { // Step 2: Receive isRegistered as a prop
               ))}
             </List>
           )}
-          {['Privillage', 'How to Book'].map((text) => (
+          {['ListProperty', 'How to Book'].map((text) => (
             <ListItem button key={text} component={Link} to={text.toLowerCase().replace(' ', '-')}>
               <ListItemText primary={text} />
             </ListItem>
           ))}
-          <ListItem button component={Link} to={isRegistered ? '/button' : '/login'}>
-            <ListItemText primary={isRegistered ? 'Your Product' : 'Login'} />
-          </ListItem>
           <ListItem>
             <Button variant="contained" color="primary">
               Request Call
@@ -104,49 +99,46 @@ const NavBar = ({ isRegistered }) => { // Step 2: Receive isRegistered as a prop
     <>
       <AppBar position="fixed" color="default">
         <Container maxWidth="lg">
-          <Toolbar disableGutters>
+          <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
+              <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+                Roomyo
+              </Link>
+            </Typography>
             {isMobile ? (
-              <>
-                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                  <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-                    Roomoyo
-                  </Link>
-                </Typography>
-                <IconButton
-                  size="large"
-                  edge="start"
-                  color="inherit"
-                  aria-label="menu"
-                  onClick={toggleDrawer(true)}
-                >
-                  <MenuIcon />
-                </IconButton>
-              </>
+              <IconButton size="large" edge="end" color="inherit" aria-label="menu" onClick={toggleDrawer(true)}>
+                <MenuIcon />
+              </IconButton>
             ) : (
-              <Grid container alignItems="center" spacing={4}>
-                <Grid item xs={12} md={3}>
-                  <Typography variant="h6" component="div">
-                    <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-                      Roomyo
-                    </Link>
-                  </Typography>
+              <Grid container alignItems="center" spacing={2} sx={{ flexGrow: 1, justifyContent: 'flex-end' }}>
+                <Grid item>
+                  <Button color="inherit" onClick={handleCityMenuOpen}>
+                    City
+                  </Button>
+                  {cityMenu}
                 </Grid>
-                <Grid item xs={12} md={9}>
-                  <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-                    <Button color="inherit" onClick={handleCityMenuOpen}>
-                      City
-                    </Button>
-                    {cityMenu}
-                    <Button color="inherit" component={Link} to="/privillage">Privillage</Button>
-                    <Button color="inherit" component={Link} to="/how-to-book">How to Book</Button>
-                    {/* Conditionally render "Your Product" or "Login" */}
-                    <Button color="inherit" component={Link} to={isRegistered ? '/button' : '/login'}>
-                      {isRegistered ? 'Your Product' : 'Login'}
-                    </Button>
-                    <Button variant="contained" color="primary">
-                      Request Call
-                    </Button>
-                  </Box>
+                <Grid item>
+                  <Button color="inherit" component={Link} to="/privillage">
+                    ListProperty
+                  </Button>
+                </Grid>
+                <Grid item>
+                  <Button color="inherit" component={Link} to="/how-to-book">
+                    How to Book
+                  </Button>
+                </Grid>
+                <Grid item>
+                  <IconButton color="inherit" onClick={() => navigate(isRegistered ? '/button' : '/login')}>
+                    <AccountCircle />
+                    <Typography variant="caption" sx={{ ml: 1 }}>
+                      Login/signup
+                    </Typography>
+                  </IconButton>
+                </Grid>
+                <Grid item>
+                  <Button variant="contained" color="primary">
+                    Request Call
+                  </Button>
                 </Grid>
               </Grid>
             )}
@@ -161,6 +153,7 @@ const NavBar = ({ isRegistered }) => { // Step 2: Receive isRegistered as a prop
 };
 
 export default NavBar;
+
 
 
 
