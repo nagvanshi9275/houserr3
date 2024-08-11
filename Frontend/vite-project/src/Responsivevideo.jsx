@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { IconButton, TextField, Typography } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
@@ -7,15 +8,12 @@ const ResponsiveVideo = ({ src }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    // Add placeholders to the list
     setPlaceholders(['Search home', 'Search location', 'Search place']);
     
-    // Rotate through placeholders
     const interval = setInterval(() => {
       setCurrentIndex(prevIndex => (prevIndex + 1) % placeholders.length);
-    }, 2000); // Change placeholder every 2 seconds
+    }, 2000);
 
-    // Clean up interval on component unmount
     return () => clearInterval(interval);
   }, [placeholders.length]);
 
@@ -25,9 +23,9 @@ const ResponsiveVideo = ({ src }) => {
         position: 'relative',
         width: '100%',
         height: '0',
-        paddingBottom: '56.25%', // 16:9 aspect ratio
+        paddingBottom: '56.25%',
         overflow: 'hidden',
-        marginTop: '-26px', // Adjust top margin
+        marginTop: '-26px',
       }}
     >
       <div
@@ -83,14 +81,14 @@ const ResponsiveVideo = ({ src }) => {
               endAdornment: (
                 <IconButton
                   style={{
-                    padding: 0,
+                    padding: '0 10px', // Adjust padding
                     color: 'white',
                     backgroundColor: 'red',
                     borderRadius: '25px',
-                    marginLeft: '-1px', // Overlap with the input border
-                    height: '100%', // Match height with the input field
+                    height: '10vh', // Match the height of the input field
                     display: 'flex',
                     alignItems: 'center',
+                    marginRight: '-1px', // Overlap with the input border
                   }}
                 >
                   <SearchIcon />
@@ -108,7 +106,7 @@ const ResponsiveVideo = ({ src }) => {
               style: {
                 padding: '10px 15px',
                 borderRadius: '25px',
-                backgroundColor: 'rgba(255, 255, 255, 0.8)', // Semi-transparent background
+                backgroundColor: 'rgba(255, 255, 255, 0.8)',
               },
             }}
             fullWidth
@@ -122,7 +120,7 @@ const ResponsiveVideo = ({ src }) => {
         {`
           @media (max-width: 768px) {
             div {
-              paddingBottom: 75%; // Adjust aspect ratio for smaller screens
+              paddingBottom: 75%;
             }
             .MuiInputBase-input {
               font-size: 14px;
@@ -136,7 +134,7 @@ const ResponsiveVideo = ({ src }) => {
           }
           @media (max-width: 480px) {
             div {
-              paddingBottom: 100%; // Further adjust for very small screens
+              paddingBottom: 100%;
             }
             .MuiInputBase-input {
               font-size: 12px;
@@ -155,9 +153,6 @@ const ResponsiveVideo = ({ src }) => {
 };
 
 export default ResponsiveVideo;
-
-
-
 
 
 

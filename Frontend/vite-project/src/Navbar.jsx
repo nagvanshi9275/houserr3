@@ -1,6 +1,5 @@
 
 
-
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -118,9 +117,17 @@ const NavBar = ({ isRegistered }) => {
                   {cityMenu}
                 </Grid>
                 <Grid item>
-                  <Button color="inherit" component={Link} to="/privillage">
-                    ListProperty
-                  </Button>
+                  <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    {/* ListProperty Button and Free Text in a Column */}
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                      <Button color="inherit" component={Link} to="/privillage">
+                        ListProperty
+                      </Button>
+                      <Typography variant="caption" sx={{ color: 'red' }}>
+                        Free
+                      </Typography>
+                    </div>
+                  </Box>
                 </Grid>
                 <Grid item>
                   <Button color="inherit" component={Link} to="/how-to-book">
