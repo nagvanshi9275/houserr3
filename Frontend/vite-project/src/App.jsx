@@ -21,7 +21,9 @@ import gig from "./WhatsApp Video 2024-08-10 at 00.03.21 (1).mp4";
 
 import Mid from "./Mid";
 
+import Blog from "./Blog";
 
+import BlogDetail from "./Blogdetail";
 export default function App() {
 
 const[message, setmessage] = React.useState("")
@@ -70,6 +72,9 @@ const [isRegistered, setIsRegistered] = React.useState(false);
 
           <Route path="/button" element={<Experiment1 gmail={gmail}/>}></Route>
 
+          <Route path="/blog" element={<Blog/>}></Route>
+
+          <Route path="/blog/:id" element={<BlogDetail />} />
 
 
 

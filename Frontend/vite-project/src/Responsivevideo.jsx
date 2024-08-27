@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { IconButton, TextField, Typography } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
@@ -9,9 +8,9 @@ const ResponsiveVideo = ({ src }) => {
 
   useEffect(() => {
     setPlaceholders(['Search home', 'Search location', 'Search place']);
-    
+
     const interval = setInterval(() => {
-      setCurrentIndex(prevIndex => (prevIndex + 1) % placeholders.length);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % placeholders.length);
     }, 2000);
 
     return () => clearInterval(interval);
@@ -22,39 +21,28 @@ const ResponsiveVideo = ({ src }) => {
       style={{
         position: 'relative',
         width: '100%',
-        height: '0',
-        paddingBottom: '56.25%',
-        overflow: 'hidden',
-        marginTop: '-26px',
+        height: '100vh',
+        marginTop: '-40px',
+        padding: '0'
       }}
     >
-      <div
+      <video
         style={{
           position: 'absolute',
-          top: 0,
-          left: 0,
+          top: '0',
+          left: '0',
           width: '100%',
           height: '100%',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
+          objectFit: 'cover',
         }}
+        autoPlay
+        muted
+        loop
+        playsInline
       >
-        <video
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-          }}
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source src={src} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
+        <source src={src} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <div
         style={{
           position: 'absolute',
@@ -70,7 +58,6 @@ const ResponsiveVideo = ({ src }) => {
       >
         <div
           style={{
-            position: 'relative',
             width: '100%',
           }}
         >
@@ -81,14 +68,13 @@ const ResponsiveVideo = ({ src }) => {
               endAdornment: (
                 <IconButton
                   style={{
-                    padding: '0 10px', // Adjust padding
+                    padding: '0 10px',
                     color: 'white',
                     backgroundColor: 'red',
                     borderRadius: '25px',
-                    height: '10vh', // Match the height of the input field
+                    height: '10vh',
                     display: 'flex',
                     alignItems: 'center',
-                    marginRight: '-1px', // Overlap with the input border
                   }}
                 >
                   <SearchIcon />
@@ -119,9 +105,6 @@ const ResponsiveVideo = ({ src }) => {
       <style>
         {`
           @media (max-width: 768px) {
-            div {
-              paddingBottom: 75%;
-            }
             .MuiInputBase-input {
               font-size: 14px;
             }
@@ -133,9 +116,6 @@ const ResponsiveVideo = ({ src }) => {
             }
           }
           @media (max-width: 480px) {
-            div {
-              paddingBottom: 100%;
-            }
             .MuiInputBase-input {
               font-size: 12px;
             }
@@ -153,12 +133,3 @@ const ResponsiveVideo = ({ src }) => {
 };
 
 export default ResponsiveVideo;
-
-
-
-
-
-
-
-
-

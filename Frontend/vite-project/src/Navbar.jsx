@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -89,6 +87,19 @@ const NavBar = ({ isRegistered }) => {
               Request Call
             </Button>
           </ListItem>
+          <ListItem>
+            <Button variant="contained" color="secondary" component={Link} to="/blog">
+              Blog
+            </Button>
+          </ListItem>
+          <ListItem>
+            <Button color="inherit" onClick={() => navigate(isRegistered ? '/button' : '/login')}>
+              <AccountCircle />
+              <Typography variant="caption" sx={{ ml: 1 }}>
+                Sign in
+              </Typography>
+            </Button>
+          </ListItem>
         </List>
       </Box>
     </Drawer>
@@ -117,17 +128,9 @@ const NavBar = ({ isRegistered }) => {
                   {cityMenu}
                 </Grid>
                 <Grid item>
-                  <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    {/* ListProperty Button and Free Text in a Column */}
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                      <Button color="inherit" component={Link} to="/privillage">
-                        ListProperty
-                      </Button>
-                      <Typography variant="caption" sx={{ color: 'red' }}>
-                        Free
-                      </Typography>
-                    </div>
-                  </Box>
+                  <Button color="inherit" component={Link} to="/privillage">
+                    ListProperty
+                  </Button>
                 </Grid>
                 <Grid item>
                   <Button color="inherit" component={Link} to="/how-to-book">
@@ -137,14 +140,21 @@ const NavBar = ({ isRegistered }) => {
                 <Grid item>
                   <IconButton color="inherit" onClick={() => navigate(isRegistered ? '/button' : '/login')}>
                     <AccountCircle />
-                    <Typography variant="caption" sx={{ ml: 1 }}>
-                      Login/signup
-                    </Typography>
+                    {!isMobile && (
+                      <Typography variant="caption" sx={{ ml: 1 }}>
+                        Login/signup
+                      </Typography>
+                    )}
                   </IconButton>
                 </Grid>
                 <Grid item>
                   <Button variant="contained" color="primary">
                     Request Call
+                  </Button>
+                </Grid>
+                <Grid item>
+                  <Button variant="contained" color="secondary" component={Link} to="/blog">
+                    Blog
                   </Button>
                 </Grid>
               </Grid>
@@ -153,18 +163,9 @@ const NavBar = ({ isRegistered }) => {
         </Container>
         {drawer}
       </AppBar>
-      {/* Adding some spacing to account for the fixed AppBar */}
       <Toolbar />
     </>
   );
 };
 
 export default NavBar;
-
-
-
-
-
-
-
-
