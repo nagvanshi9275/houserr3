@@ -24,6 +24,8 @@ import Mid from "./Mid";
 import Blog from "./Blog";
 
 import BlogDetail from "./Blogdetail";
+
+import Howtobook from "./Howtobook";
 export default function App() {
 
 const[message, setmessage] = React.useState("")
@@ -73,6 +75,9 @@ const [isRegistered, setIsRegistered] = React.useState(false);
           <Route path="/button" element={<Experiment1 gmail={gmail}/>}></Route>
 
           <Route path="/blog" element={<Blog/>}></Route>
+
+
+          <Route path="/how-to-book" element={<Howtobook/>}></Route>
 
           <Route path="/blog/:id" element={<BlogDetail />} />
 

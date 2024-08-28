@@ -93,10 +93,10 @@ const NavBar = ({ isRegistered }) => {
             </Button>
           </ListItem>
           <ListItem>
-            <Button color="inherit" onClick={() => navigate(isRegistered ? '/button' : '/login')}>
+            <Button color="inherit" onClick={() => navigate('/button')}>
               <AccountCircle />
               <Typography variant="caption" sx={{ ml: 1 }}>
-                Sign in
+                {isRegistered ? 'Your Profile' : 'Login/Signup'}
               </Typography>
             </Button>
           </ListItem>
@@ -138,11 +138,11 @@ const NavBar = ({ isRegistered }) => {
                   </Button>
                 </Grid>
                 <Grid item>
-                  <IconButton color="inherit" onClick={() => navigate(isRegistered ? '/button' : '/login')}>
+                  <IconButton color="inherit" onClick={() => isRegistered ? navigate('/button') : navigate('/login')}>
                     <AccountCircle />
                     {!isMobile && (
                       <Typography variant="caption" sx={{ ml: 1 }}>
-                        Login/signup
+                        {isRegistered ? 'Your Profile' : 'Login/Signup'}
                       </Typography>
                     )}
                   </IconButton>
