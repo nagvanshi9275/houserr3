@@ -26,6 +26,10 @@ import Blog from "./Blog";
 import BlogDetail from "./Blogdetail";
 
 import Howtobook from "./Howtobook";
+
+import Listing from "./Listing";
+
+
 export default function App() {
 
 const[message, setmessage] = React.useState("")
@@ -78,6 +82,8 @@ const [isRegistered, setIsRegistered] = React.useState(false);
 
 
           <Route path="/how-to-book" element={<Howtobook/>}></Route>
+
+          <Route path="/listproperty" element={<Listing/>}></Route>
 
           <Route path="/blog/:id" element={<BlogDetail />} />
 

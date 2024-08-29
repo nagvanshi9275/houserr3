@@ -1,7 +1,4 @@
 
-
-
-
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -93,9 +90,9 @@ const NavBar = ({ isRegistered }) => {
             </Button>
           </ListItem>
           <ListItem>
-            <Button variant="contained" color="secondary" component={Link} to="/blog">
+            <Typography variant="body1" component={Link} to="/blog" sx={{ color: 'text.primary', textDecoration: 'none', display: 'block', padding: 1 }}>
               Blog
-            </Button>
+            </Typography>
           </ListItem>
           <ListItem>
             <Button color="inherit" onClick={() => navigate('/button')}>
@@ -143,6 +140,11 @@ const NavBar = ({ isRegistered }) => {
                   </Button>
                 </Grid>
                 <Grid item>
+                  <Typography variant="body1" component={Link} to="/blog" sx={{ color: 'text.primary', textDecoration: 'none' }}>
+                    Blog
+                  </Typography>
+                </Grid>
+                <Grid item>
                   <IconButton color="inherit" onClick={() => isRegistered ? navigate('/button') : navigate('/login')}>
                     <AccountCircle />
                     {!isMobile && (
@@ -157,11 +159,6 @@ const NavBar = ({ isRegistered }) => {
                     Request Call
                   </Button>
                 </Grid>
-                <Grid item>
-                  <Button variant="contained" color="secondary" component={Link} to="/blog">
-                    Blog
-                  </Button>
-                </Grid>
               </Grid>
             )}
           </Toolbar>
@@ -174,9 +171,6 @@ const NavBar = ({ isRegistered }) => {
 };
 
 export default NavBar;
-
-
-
 
 
 
