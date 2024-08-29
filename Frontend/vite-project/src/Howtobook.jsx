@@ -134,7 +134,7 @@ export default function Howtobook() {
               marginBottom: "10px",
             }}
           >
-            Additional Information
+            Booking Information
           </Typography>
           <Typography
             variant="body1"
@@ -266,7 +266,7 @@ export default function Howtobook() {
               marginBottom: "10px",
             }}
           >
-            Additional Information
+            Booking Information
           </Typography>
           <Typography
             variant="body1"
