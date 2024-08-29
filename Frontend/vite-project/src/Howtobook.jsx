@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Box, Typography } from "@mui/material";
 
@@ -122,7 +121,7 @@ export default function Howtobook() {
             flex: 1,
             padding: "20px",
             textAlign: "left",
-            order: { xs: 1, md: 1 },
+            order: 1,
             width: { xs: "100%", md: "50%" },
           }}
         >
@@ -155,7 +154,7 @@ export default function Howtobook() {
             height: "auto",
             maxWidth: "600px",
             maxHeight: "300px",
-            order: { xs: 2, md: 2 },
+            order: 2,
             marginTop: { xs: "20px", md: "0px" },
           }}
         >
@@ -214,7 +213,7 @@ export default function Howtobook() {
             height: "auto",
             maxWidth: "600px",
             maxHeight: "300px",
-            order: { xs: 1, md: 1 },
+            order: 1,
           }}
         >
           <Box
@@ -254,7 +253,7 @@ export default function Howtobook() {
             flex: 1,
             padding: "20px",
             textAlign: "left",
-            order: { xs: 2, md: 2 },
+            order: 2,
             width: { xs: "100%", md: "50%" },
           }}
         >
@@ -284,7 +283,7 @@ export default function Howtobook() {
       <Box
         sx={{
           display: "flex",
-          flexDirection: { xs: "column", md: "row" },
+          flexDirection: "row", // Keep the flexDirection as row for all screen sizes
           alignItems: "flex-start",
           width: "100%",
           maxWidth: "1800px",
@@ -298,8 +297,7 @@ export default function Howtobook() {
             flex: 1,
             padding: "20px",
             textAlign: "left",
-            order: { xs: 2, md: 1 },
-            width: { xs: "100%", md: "50%" },
+            order: 1, // Ensure text remains on the left
           }}
         >
           <Typography
@@ -310,16 +308,16 @@ export default function Howtobook() {
               marginBottom: "10px",
             }}
           >
-            Another Section Title
+            Booking Information
           </Typography>
           <Typography
             variant="body1"
             component="p"
             sx={{ fontSize: { xs: "0.875rem", md: "1rem" } }}
           >
-            This section includes text that provides further details or context.
-            It is aligned to the left of the image on larger devices, and stacked
-            on top of the image on smaller devices.
+            This is additional information that complements the image on the right.
+            It provides context and details about the subject matter. Adjust
+            the text as needed to fit your content and layout requirements.
           </Typography>
         </Box>
 
@@ -327,11 +325,11 @@ export default function Howtobook() {
           sx={{
             flex: 1,
             position: "relative",
-            width: { xs: "100%", md: "50%" },
-            height: "auto",
+            width: "100%",
             maxWidth: "600px",
             maxHeight: "300px",
-            order: { xs: 1, md: 2 },
+            marginTop: { xs: "20px", md: "0px" },
+            order: 2, // Ensure image remains on the right
           }}
         >
           <Box
@@ -369,7 +367,4 @@ export default function Howtobook() {
     </Box>
   );
 }
-
-
-
 
