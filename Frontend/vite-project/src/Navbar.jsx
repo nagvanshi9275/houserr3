@@ -1,3 +1,7 @@
+
+
+
+
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -77,11 +81,12 @@ const NavBar = ({ isRegistered }) => {
               ))}
             </List>
           )}
-          {['ListProperty', 'How to Book'].map((text) => (
-            <ListItem button key={text} component={Link} to={text.toLowerCase().replace(' ', '-')}>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          <ListItem button component={Link} to="/listproperty">
+            <ListItemText primary="ListProperty" />
+          </ListItem>
+          <ListItem button component={Link} to="/how-to-book">
+            <ListItemText primary="How to Book" />
+          </ListItem>
           <ListItem>
             <Button variant="contained" color="primary">
               Request Call
@@ -128,7 +133,7 @@ const NavBar = ({ isRegistered }) => {
                   {cityMenu}
                 </Grid>
                 <Grid item>
-                  <Button color="inherit" component={Link} to="/privillage">
+                  <Button color="inherit" component={Link} to="/listproperty">
                     ListProperty
                   </Button>
                 </Grid>
@@ -169,3 +174,10 @@ const NavBar = ({ isRegistered }) => {
 };
 
 export default NavBar;
+
+
+
+
+
+
+
