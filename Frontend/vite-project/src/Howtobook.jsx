@@ -22,7 +22,7 @@ export default function Howtobook() {
 
       <Box
         component="img"
-        src="https://i.postimg.cc/cCnPKtbc/Untitled-design-7.png"
+        src="https://i.postimg.cc/021bmbT1/Screenshot-317.png"
         alt="How to Book"
         sx={{
           width: "120%",
@@ -33,72 +33,7 @@ export default function Howtobook() {
       />
 
       {/* Image with Text Overlay */}
-      <Box
-        sx={{
-          position: "relative",
-          width: "100%",
-          maxWidth: "1800px",
-          height: "auto",
-          marginBottom: "40px",
-        }}
-      >
-        <Box
-          component="img"
-          src="https://i.postimg.cc/cCnPKtbc/Untitled-design-7.png"
-          alt="Overlay Image"
-          sx={{
-            width: "100%",
-            height: "auto",
-            maxHeight: "120vh",
-            objectFit: "cover",
-          }}
-        />
-        <Typography
-          variant="h4"
-          component="div"
-          sx={{
-            position: "absolute",
-            top: "1rem",
-            left: "1rem",
-            color: "white",
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-            padding: "0.5rem 1rem",
-            borderRadius: "8px",
-            textAlign: "left",
-            fontSize: { xs: "1.25rem", md: "2rem" },
-            boxSizing: "border-box",
-            maxWidth: "calc(100% - 2rem)",
-          }}
-        >
-          Roomyo1
-        </Typography>
-
-        <Typography
-          variant="body1"
-          component="p"
-          sx={{
-            position: "absolute",
-            top: "50%",
-            left: "1rem",
-            transform: "translateY(-50%)",
-            color: "white",
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-            padding: "0.5rem 1rem",
-            borderRadius: "8px",
-            textAlign: "left",
-            fontSize: { xs: "0.875rem", md: "1.25rem" },
-            width: { xs: "calc(100% - 2rem)", md: "40%" },
-            boxSizing: "border-box",
-            wordWrap: "break-word",
-            whiteSpace: "pre-wrap",
-            marginTop: "2rem",
-          }}
-        >
-          Hey Hustlers, we know the struggle to finding the perfect place whether you are a student or working professional 
-          {"\n"}{"\n"}
-          Thats why we have simplified it into just 5 step secure your spot hustle free wherever you are ready to get started
-        </Typography>
-      </Box>
+ 
 
       {/* Third Section with Text on the Left and Image on the Right */}
       <Box
@@ -155,7 +90,7 @@ export default function Howtobook() {
         >
           <Box
             component="img"
-            src="https://i.postimg.cc/cCnPKtbc/Untitled-design-7.png"
+            src="https://i.postimg.cc/gJvPPkN3/plha.jpg"
             alt="Additional Information Image"
             sx={{
               width: "100%",
@@ -213,7 +148,7 @@ export default function Howtobook() {
         >
           <Box
             component="img"
-            src="https://i.postimg.cc/cCnPKtbc/Untitled-design-7.png"
+            src="https://i.postimg.cc/66fNjq7X/dusra.jpg"
             alt="Additional Information Image"
             sx={{
               width: "100%",
@@ -325,7 +260,7 @@ export default function Howtobook() {
         >
           <Box
             component="img"
-            src="https://i.postimg.cc/cCnPKtbc/Untitled-design-7.png"
+            src="https://i.postimg.cc/kXMPkC8t/tisra.jpg"
             alt="Additional Information Image"
             sx={{
               width: "100%",
@@ -385,7 +320,7 @@ export default function Howtobook() {
         >
           <Box
             component="img"
-            src="https://i.postimg.cc/cCnPKtbc/Untitled-design-7.png"
+            src="https://i.postimg.cc/ydh2bp8P/chautha.jpg"
             alt="Additional Information Image"
             sx={{
               width: "100%",
@@ -498,7 +433,7 @@ export default function Howtobook() {
         >
           <Box
             component="img"
-            src="https://i.postimg.cc/cCnPKtbc/Untitled-design-7.png"
+            src="https://i.postimg.cc/05TVLR40/Whats-App-Image-2024-08-30-at-23-42-17-2.jpg"
             alt="Additional Information Image"
             sx={{
               width: "100%",

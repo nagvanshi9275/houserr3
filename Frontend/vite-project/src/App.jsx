@@ -30,6 +30,10 @@ import Howtobook from "./Howtobook";
 import Listing from "./Listing";
 
 
+//import Findspace from "./Findspace";
+
+import Findspace from "./Findspace";
+
 export default function App() {
 
 const[message, setmessage] = React.useState("")
@@ -62,7 +66,7 @@ const [isRegistered, setIsRegistered] = React.useState(false);
 
               <Citydata />
 
-              
+              <Findspace/>
 
             </>
           } />
