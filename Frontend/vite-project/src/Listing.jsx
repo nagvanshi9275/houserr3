@@ -76,7 +76,7 @@ export default function Listing() {
           <Grid item xs={12} sm={4}>
             <Box display="flex" alignItems="center" flexDirection="column">
               <img 
-                src="https://i.postimg.cc/nhsD5j5K/tips-for-selling-your-home.webp" 
+                src="https://i.postimg.cc/W3tBxLzw/Whats-App-Image-2024-08-30-at-23-42-18.jpg" 
                 alt="Step 1"
                 style={{ width: '100%', maxWidth: 100, height: 'auto', objectFit: 'cover' }}
               />
@@ -94,7 +94,7 @@ export default function Listing() {
           <Grid item xs={12} sm={4}>
             <Box display="flex" alignItems="center" flexDirection="column">
               <img 
-                src="https://i.postimg.cc/nhsD5j5K/tips-for-selling-your-home.webp" 
+                src="https://i.postimg.cc/HsbfqtYR/Whats-App-Image-2024-08-30-at-23-48-51.jpg" 
                 alt="Step 2"
                 style={{ width: '100%', maxWidth: 100, height: 'auto', objectFit: 'cover' }}
               />
@@ -112,7 +112,7 @@ export default function Listing() {
           <Grid item xs={12} sm={4}>
             <Box display="flex" alignItems="center" flexDirection="column">
               <img 
-                src="https://i.postimg.cc/nhsD5j5K/tips-for-selling-your-home.webp" 
+                src="https://i.postimg.cc/6QpgGJrx/Whats-App-Image-2024-08-30-at-23-49-31.jpg" 
                 alt="Step 3"
                 style={{ width: '100%', maxWidth: 100, height: 'auto', objectFit: 'cover' }}
               />
