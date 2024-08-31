@@ -1,26 +1,16 @@
-
 import React from "react";
 import { Grid, Typography, Paper, Button, Box } from "@mui/material";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-
 import { useNavigate } from 'react-router-dom';
+import videoFile from './WhatsApp Video 2024-08-30 at 23.46.26.mp4'; // Adjust the import path if necessary
 
 export default function Listing() {
-  // Define the height for the Paper component
   const paperHeight = 400; // Adjust the height as needed
-
   const navigate = useNavigate(); 
 
-   function Listing(){
-
-    navigate('/agent-form')
-
-
-
-   }
-
-
-
+  function handleListing() {
+    navigate('/agent-form');
+  }
 
   return (
     <div style={{ padding: 16 }}>
@@ -50,7 +40,7 @@ export default function Listing() {
                 <Button
                   variant="contained"
                   color="primary"
-                  onClick={Listing}
+                  onClick={handleListing}
                   style={{
                     backgroundColor: '#1E90FF', // Cool color
                     borderRadius: 20, // Border radius
@@ -69,9 +59,11 @@ export default function Listing() {
         {/* Second Column */}
         <Grid item xs={12} sm={6} md={6}>
           <Paper style={{ padding: 16, height: paperHeight, textAlign: 'center' }}>
-            <img 
-              src="https://i.postimg.cc/nhsD5j5K/tips-for-selling-your-home.webp" 
-              alt="Property"
+            <video 
+              src={videoFile} 
+              autoPlay 
+              loop 
+              muted
               style={{ 
                 width: '100%', 
                 height: '100%', 
@@ -147,11 +139,3 @@ export default function Listing() {
     </div>
   );
 }
-
-
-
-
-
-
-
-
