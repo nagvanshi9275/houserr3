@@ -85,7 +85,11 @@ const NavBar = ({ isRegistered }) => {
             <ListItemText primary="How to Book" />
           </ListItem>
           <ListItem>
-            <Button variant="contained" color="primary">
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => navigate('/request-call')} // Update the onClick handler
+            >
               Request Call
             </Button>
           </ListItem>
@@ -155,7 +159,11 @@ const NavBar = ({ isRegistered }) => {
                   </IconButton>
                 </Grid>
                 <Grid item>
-                  <Button variant="contained" color="primary">
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={() => navigate('/request-call')} // Update the onClick handler
+                  >
                     Request Call
                   </Button>
                 </Grid>
@@ -171,6 +179,10 @@ const NavBar = ({ isRegistered }) => {
 };
 
 export default NavBar;
+
+
+
+
 
 
 

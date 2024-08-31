@@ -36,6 +36,9 @@ import Findspace from "./Findspace";
 
 import AgentForm from "./AgentForm";
 
+import Requestcall from "./Requestcall";
+
+
 export default function App() {
 
 const[message, setmessage] = React.useState("")
@@ -92,6 +95,8 @@ const [isRegistered, setIsRegistered] = React.useState(false);
           <Route path="/listproperty" element={<Listing/>}></Route>
 
           <Route path="/agent-form" element={<AgentForm/>}></Route>
+
+          <Route path="/request-call" element={<Requestcall/>}></Route>
 
           <Route path="/blog/:id" element={<BlogDetail />} />
 
