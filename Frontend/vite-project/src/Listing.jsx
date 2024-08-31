@@ -3,9 +3,24 @@ import React from "react";
 import { Grid, Typography, Paper, Button, Box } from "@mui/material";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
+import { useNavigate } from 'react-router-dom';
+
 export default function Listing() {
   // Define the height for the Paper component
   const paperHeight = 400; // Adjust the height as needed
+
+  const navigate = useNavigate(); 
+
+   function Listing(){
+
+    navigate('/agent-form')
+
+
+
+   }
+
+
+
 
   return (
     <div style={{ padding: 16 }}>
@@ -35,6 +50,7 @@ export default function Listing() {
                 <Button
                   variant="contained"
                   color="primary"
+                  onClick={Listing}
                   style={{
                     backgroundColor: '#1E90FF', // Cool color
                     borderRadius: 20, // Border radius

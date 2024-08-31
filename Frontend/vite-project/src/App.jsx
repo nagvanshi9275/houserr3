@@ -34,6 +34,8 @@ import Listing from "./Listing";
 
 import Findspace from "./Findspace";
 
+import AgentForm from "./AgentForm";
+
 export default function App() {
 
 const[message, setmessage] = React.useState("")
@@ -88,6 +90,8 @@ const [isRegistered, setIsRegistered] = React.useState(false);
           <Route path="/how-to-book" element={<Howtobook/>}></Route>
 
           <Route path="/listproperty" element={<Listing/>}></Route>
+
+          <Route path="/agent-form" element={<AgentForm/>}></Route>
 
           <Route path="/blog/:id" element={<BlogDetail />} />
 
