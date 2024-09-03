@@ -390,7 +390,7 @@ const homeData = [
       {
         locationTitle: "Kothrud",
         locationDescription: "A popular residential area with all essential facilities.",
-        houseImages: ["kothrud_house1.jpg", "kothrud_house2.jpg", "kothrud_house3.jpg", "kothrud_house4.jpg"],
+        houseImages: ["https://i.postimg.cc/HLyJvg6x/house2.jpg", "kothrud_house2.jpg", "kothrud_house3.jpg", "kothrud_house4.jpg"],
         pricing: "Starting from ₹70 lakhs",
         price2bhk: "300000",
         price3bhk: "7000000",
@@ -421,7 +421,7 @@ const homeData = [
       {
         locationTitle: "Baner",
         locationDescription: "A developing suburb with a blend of residential and commercial spaces.",
-        houseImages: ["baner_house1.jpg", "baner_house2.jpg", "baner_house3.jpg", "baner_house4.jpg"],
+        houseImages: ["https://i.postimg.cc/qvqS8K3T/val1.jpg", "baner_house2.jpg", "baner_house3.jpg", "baner_house4.jpg"],
         pricing: "Starting from ₹75 lakhs",
         price2bhk: "300000",
         price3bhk: "7000000",
@@ -432,7 +432,7 @@ const homeData = [
             housePricing: "₹1.1 crores",
             address: "789 Baner Rd, Pune",
             residentManager: "Deepak Shah",
-            houseImages: ["baner_house1a.jpg", "baner_house1b.jpg", "baner_house1c.jpg", "baner_house1d.jpg"],
+            houseImages: ["https://i.postimg.cc/HLyJvg6x/house2.jpg", "baner_house1b.jpg", "baner_house1c.jpg", "baner_house1d.jpg"],
             nearbyProperties: [
               {
                 propertyTitle: "Nearby Property 1",
@@ -460,7 +460,7 @@ const homeData = [
       {
         locationTitle: "Whitefield",
         locationDescription: "A bustling suburb with numerous IT parks and residential complexes.",
-        houseImages: ["whitefield_house1.jpg", "whitefield_house2.jpg", "whitefield_house3.jpg", "whitefield_house4.jpg"],
+        houseImages: ["https://i.postimg.cc/qvqS8K3T/val1.jpg", "whitefield_house2.jpg", "whitefield_house3.jpg", "whitefield_house4.jpg"],
         pricing: "Starting from ₹90 lakhs",
         price2bhk: "300000",
         price3bhk: "7000000",
@@ -491,7 +491,7 @@ const homeData = [
       {
         locationTitle: "Indiranagar",
         locationDescription: "A trendy locality known for its vibrant nightlife and cultural diversity.",
-        houseImages: ["indiranagar_house1.jpg", "indiranagar_house2.jpg", "indiranagar_house3.jpg", "indiranagar_house4.jpg"],
+        houseImages: ["https://i.postimg.cc/D0t8Fpj6/house1.jpg", "indiranagar_house2.jpg", "indiranagar_house3.jpg", "indiranagar_house4.jpg"],
         pricing: "Starting from ₹1 crore",
         price2bhk: "300000",
         price3bhk: "7000000",
@@ -530,7 +530,7 @@ const homeData = [
       {
         locationTitle: "South Delhi",
         locationDescription: "A posh locality known for its green spaces and upscale residences.",
-        houseImages: ["southdelhi_house1.jpg", "southdelhi_house2.jpg", "southdelhi_house3.jpg", "southdelhi_house4.jpg"],
+        houseImages: ["https://i.postimg.cc/qvqS8K3T/val1.jpg", "southdelhi_house2.jpg", "southdelhi_house3.jpg", "southdelhi_house4.jpg"],
         pricing: "Starting from ₹2 crores",
         price2bhk: "300000",
         price3bhk: "7000000",
@@ -561,7 +561,7 @@ const homeData = [
       {
         locationTitle: "Gurgaon",
         locationDescription: "A major financial and technology hub with modern infrastructure.",
-        houseImages: ["gurgaon_house1.jpg", "gurgaon_house2.jpg", "gurgaon_house3.jpg", "gurgaon_house4.jpg"],
+        houseImages: ["https://i.postimg.cc/D0t8Fpj6/house1.jpg", "gurgaon_house2.jpg", "gurgaon_house3.jpg", "gurgaon_house4.jpg"],
         pricing: "Starting from ₹1 crore",
         price2bhk: "300000",
         price3bhk: "7000000",
@@ -572,12 +572,12 @@ const homeData = [
             housePricing: "₹2 crores",
             address: "456 Gurgaon St, Delhi",
             residentManager: "Kunal Sharma",
-            houseImages: ["gurgaon_house1a.jpg", "gurgaon_house1b.jpg", "gurgaon_house1c.jpg", "gurgaon_house1d.jpg"],
+            houseImages: ["https://i.postimg.cc/D0t8Fpj6/house1.jpg", "gurgaon_house1b.jpg", "gurgaon_house1c.jpg", "gurgaon_house1d.jpg"],
             nearbyProperties: [
               {
                 propertyTitle: "Nearby Property 1",
                 propertyDescription: "A cozy 3-bedroom apartment.",
-                propertyImages: ["gurgaon_nearby1a.jpg", "gurgaon_nearby1b.jpg", "gurgaon_nearby1c.jpg", "gurgaon_nearby1d.jpg"]
+                propertyImages: ["https://i.postimg.cc/D0t8Fpj6/house1.jpg", "gurgaon_nearby1b.jpg", "gurgaon_nearby1c.jpg", "gurgaon_nearby1d.jpg"]
               },
               {
                 propertyTitle: "Nearby Property 2",

@@ -38,9 +38,12 @@ const NavBar = ({ isRegistered }) => {
     }
   };
 
-  const handleCityMenuClose = () => {
+  const handleCityMenuClose = (city = null) => {
     setAnchorEl(null);
     setShowCityInDrawer(false);
+    if (city) {
+      navigate(`/${city}`);
+    }
   };
 
   const toggleDrawer = (open) => (event) => {
@@ -50,12 +53,12 @@ const NavBar = ({ isRegistered }) => {
     setDrawerOpen(open);
   };
 
-  const cityOptions = ['Pune', 'Hyderabad', 'Kolkata', 'Patliputra'];
+  const cityOptions = ['Chennai', 'Pune', 'Bangalore', 'Delhi'];
 
   const cityMenu = (
-    <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleCityMenuClose}>
+    <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={() => handleCityMenuClose()}>
       {cityOptions.map((city) => (
-        <MenuItem key={city} onClick={handleCityMenuClose}>
+        <MenuItem key={city} onClick={() => handleCityMenuClose(city)}>
           {city}
         </MenuItem>
       ))}
@@ -72,7 +75,7 @@ const NavBar = ({ isRegistered }) => {
           {showCityInDrawer && (
             <List component="div" disablePadding>
               {cityOptions.map((city) => (
-                <ListItem button key={city} sx={{ pl: 4 }} onClick={handleCityMenuClose}>
+                <ListItem button key={city} sx={{ pl: 4 }} onClick={() => handleCityMenuClose(city)}>
                   <ListItemText primary={city} />
                 </ListItem>
               ))}
@@ -88,7 +91,7 @@ const NavBar = ({ isRegistered }) => {
             <Button
               variant="contained"
               color="primary"
-              onClick={() => navigate('/request-call')} // Update the onClick handler
+              onClick={() => navigate('/request-call')}
             >
               Request Call
             </Button>
@@ -162,7 +165,7 @@ const NavBar = ({ isRegistered }) => {
                   <Button
                     variant="contained"
                     color="primary"
-                    onClick={() => navigate('/request-call')} // Update the onClick handler
+                    onClick={() => navigate('/request-call')}
                   >
                     Request Call
                   </Button>
@@ -179,6 +182,8 @@ const NavBar = ({ isRegistered }) => {
 };
 
 export default NavBar;
+
+
 
 
 

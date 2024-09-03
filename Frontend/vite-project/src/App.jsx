@@ -38,6 +38,7 @@ import AgentForm from "./AgentForm";
 
 import Requestcall from "./Requestcall";
 
+import Footer from "./Footer";
 
 export default function App() {
 
@@ -56,6 +57,8 @@ const [isRegistered, setIsRegistered] = React.useState(false);
 
     <Router>
       <NavBar isRegistered={isRegistered}/>
+
+      
       <Container sx={{ marginTop: '30px' }}>
         <Routes>
           {/* The video and city data will be displayed on the home route */}
@@ -73,8 +76,12 @@ const [isRegistered, setIsRegistered] = React.useState(false);
 
               <Findspace/>
 
+           
+
             </>
           } />
+
+        
 
           {/* Add a route for individual cities */}
           <Route path="/:cityName" element={<Citydetail message={message} gmail={gmail} />} />
@@ -101,8 +108,10 @@ const [isRegistered, setIsRegistered] = React.useState(false);
           <Route path="/blog/:id" element={<BlogDetail />} />
 
 
-
         </Routes>
+
+
+        <Footer/>
       </Container>
     </Router>
   );
