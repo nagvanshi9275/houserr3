@@ -401,7 +401,7 @@ const homeData = [
             housePricing: "₹85 lakhs",
             address: "456 Kothrud Rd, Pune",
             residentManager: "Suresh Patil",
-            houseImages: ["kothrud_house1a.jpg", "kothrud_house1b.jpg", "kothrud_house1c.jpg", "kothrud_house1d.jpg"],
+            houseImages: ["https://i.postimg.cc/D0t8Fpj6/house1.jpg", "https://i.postimg.cc/HLyJvg6x/house2.jpg", "https://i.postimg.cc/HLyJvg6x/house2.jpg", "https://i.postimg.cc/HLyJvg6x/house2.jpg"],
             nearbyProperties: [
               {
                 propertyTitle: "Nearby Property 1",
@@ -432,7 +432,7 @@ const homeData = [
             housePricing: "₹1.1 crores",
             address: "789 Baner Rd, Pune",
             residentManager: "Deepak Shah",
-            houseImages: ["https://i.postimg.cc/HLyJvg6x/house2.jpg", "baner_house1b.jpg", "baner_house1c.jpg", "baner_house1d.jpg"],
+            houseImages: ["https://i.postimg.cc/HLyJvg6x/house2.jpg", "https://i.postimg.cc/HLyJvg6x/house2.jpg", "https://i.postimg.cc/HLyJvg6x/house2.jpg", "https://i.postimg.cc/HLyJvg6x/house2.jpg"],
             nearbyProperties: [
               {
                 propertyTitle: "Nearby Property 1",
@@ -471,7 +471,7 @@ const homeData = [
             housePricing: "₹2 crores",
             address: "789 Whitefield Ln, Bangalore",
             residentManager: "Anil Reddy",
-            houseImages: ["whitefield_house1a.jpg", "whitefield_house1b.jpg", "whitefield_house1c.jpg", "whitefield_house1d.jpg"],
+            houseImages: ["https://i.postimg.cc/HLyJvg6x/house2.jpg", "whitefield_house1b.jpg", "https://i.postimg.cc/HLyJvg6x/house2.jpg", "https://i.postimg.cc/HLyJvg6x/house2.jpg"],
             nearbyProperties: [
               {
                 propertyTitle: "Nearby Property 1",
@@ -572,12 +572,12 @@ const homeData = [
             housePricing: "₹2 crores",
             address: "456 Gurgaon St, Delhi",
             residentManager: "Kunal Sharma",
-            houseImages: ["https://i.postimg.cc/D0t8Fpj6/house1.jpg", "gurgaon_house1b.jpg", "gurgaon_house1c.jpg", "gurgaon_house1d.jpg"],
+            houseImages: ["https://i.postimg.cc/D0t8Fpj6/house1.jpg", "https://i.postimg.cc/HLyJvg6x/house2.jpg", "https://i.postimg.cc/HLyJvg6x/house2.jpg", "https://i.postimg.cc/HLyJvg6x/house2.jpg"],
             nearbyProperties: [
               {
                 propertyTitle: "Nearby Property 1",
                 propertyDescription: "A cozy 3-bedroom apartment.",
-                propertyImages: ["https://i.postimg.cc/D0t8Fpj6/house1.jpg", "gurgaon_nearby1b.jpg", "gurgaon_nearby1c.jpg", "gurgaon_nearby1d.jpg"]
+                propertyImages: ["https://i.postimg.cc/D0t8Fpj6/house1.jpg", "https://i.postimg.cc/HLyJvg6x/house2.jpg", "https://i.postimg.cc/HLyJvg6x/house2.jpg", "https://i.postimg.cc/HLyJvg6x/house2.jpg"]
               },
               {
                 propertyTitle: "Nearby Property 2",

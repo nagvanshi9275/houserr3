@@ -1,3 +1,6 @@
+
+
+
 import React from 'react';
 import { Container, Grid, Typography, Link, Box, IconButton } from '@mui/material';
 import YouTubeIcon from '@mui/icons-material/YouTube';
@@ -9,18 +12,21 @@ const Footer = () => {
   return (
     <Box 
       sx={{ 
-        bgcolor: '#8B4513', 
-        color: 'white',  
-        width: "98vw", 
-        mt: 20, 
-        ml: { xs: -3, sm: 4, md: -10 } // Margin left for small devices and reset for large devices
+        background: 'linear-gradient(to right, #ff7e5f, #feb47b)', // Gradient background
+        color: 'white',
+        width: "95.9vw", // Full width
+        ml: { xs: -3, sm: 4, md: -10 },
+        mt: 5,
+        py: 6,
+        mx: 'auto', // Center content horizontally
+        overflowX: 'hidden' // Prevent horizontal scroll
       }}
     >
       <Container maxWidth="lg">
         <Grid container spacing={6}>
           {/* First Column */}
           <Grid item xs={12} md={6}>
-            <img src="your-logo-url" alt="Logo" style={{ width: '150px', marginBottom: '16px' }} />
+            <img src="https://i.postimg.cc/W1QVXCCw/Waves.png" alt="Logo" style={{ width: '150px', marginBottom: '16px' }} />
             <Typography variant="body1">+91-1234567890</Typography>
             <Box sx={{ mt: 2 }}>
               <IconButton href="https://www.youtube.com" target="_blank" sx={{ color: 'white' }}>
@@ -96,6 +102,7 @@ const Footer = () => {
 };
 
 export default Footer;
+
 
 
 
