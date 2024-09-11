@@ -1,8 +1,16 @@
+
 import React from "react";
-import items from "./Finddata"; // Make sure this path is correct
+import { useNavigate } from "react-router-dom";
+import items from "./Finddata"; // Ensure this path is correct
 import { Card, CardMedia, CardContent, Typography, Grid, Container } from "@mui/material";
 
 export default function Findspace() {
+  const navigate = useNavigate();
+
+  const handleCardClick = (name) => {
+    navigate(`/item/${encodeURIComponent(name)}`);
+  };
+
   return (
     <Container>
       <Typography variant="h4" component="h1" gutterBottom align="center">
@@ -11,7 +19,7 @@ export default function Findspace() {
       <Grid container spacing={4}>
         {items.map((item, index) => (
           <Grid item key={index} xs={12} sm={6} md={4}>
-            <Card>
+            <Card onClick={() => handleCardClick(item.name)}>
               <CardMedia
                 component="img"
                 height="200"
@@ -36,3 +44,11 @@ export default function Findspace() {
     </Container>
   );
 }
+
+
+
+
+
+
+
+

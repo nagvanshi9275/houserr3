@@ -40,6 +40,10 @@ import Requestcall from "./Requestcall";
 
 import Footer from "./Footer";
 
+
+import ItemDetail from "./ItemDetail";
+
+
 export default function App() {
 
 const[message, setmessage] = React.useState("")
@@ -107,6 +111,7 @@ const [isRegistered, setIsRegistered] = React.useState(false);
 
           <Route path="/blog/:id" element={<BlogDetail />} />
 
+          <Route path="/item/:name" element={<ItemDetail />} />
 
         </Routes>
 
