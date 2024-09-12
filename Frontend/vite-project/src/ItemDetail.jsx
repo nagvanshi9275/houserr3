@@ -1,9 +1,12 @@
 
 
+
 import React from "react";
 import { useParams } from "react-router-dom";
-import items from "./Finddata"; // Ensure this path is correct
+import items from "./Finddata"; 
 import { Container, Typography, Grid } from "@mui/material";
+
+import Spaceheader from "./Spaceheader";
 
 import BedIcon from '@mui/icons-material/Bed';
 import BathtubIcon from '@mui/icons-material/Bathtub';
@@ -28,6 +31,9 @@ export default function ItemDetail() {
 
   return (
     <Container>
+
+     <Spaceheader/>
+
       <Typography variant="h4" component="h1" gutterBottom>
         {item.name}
       </Typography>
@@ -76,6 +82,19 @@ export default function ItemDetail() {
     </Container>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
