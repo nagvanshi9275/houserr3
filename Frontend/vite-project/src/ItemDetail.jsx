@@ -32,7 +32,7 @@ export default function ItemDetail() {
   return (
     <Container>
 
-     <Spaceheader/>
+  
 
       <Typography variant="h4" component="h1" gutterBottom>
         {item.name}
@@ -79,6 +79,10 @@ export default function ItemDetail() {
           <Typography variant="body1">Location</Typography>
         </Grid>
       </Grid>
+
+
+      <Spaceheader/>
+
     </Container>
   );
 }
