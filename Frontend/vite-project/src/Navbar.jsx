@@ -1,4 +1,3 @@
-
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -139,6 +138,7 @@ const NavBar = ({ isRegistered }) => {
                 <Grid item>
                   <Button color="inherit" component={Link} to="/listproperty">
                     ListProperty
+                    <span style={{ color: 'red', marginLeft: '4px' }}>(Free)</span>
                   </Button>
                 </Grid>
                 <Grid item>
@@ -182,13 +182,3 @@ const NavBar = ({ isRegistered }) => {
 };
 
 export default NavBar;
-
-
-
-
-
-
-
-
-
-
