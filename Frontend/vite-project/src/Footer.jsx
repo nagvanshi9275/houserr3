@@ -47,8 +47,8 @@ const Footer = () => {
           {/* Second Column */}
           <Grid item xs={12} md={3}>
             <Typography variant="h6" gutterBottom>Rent</Typography>
-            <Link href="/buy-property" color="inherit" underline="none">
-              <Typography variant="body1">Buy Property</Typography>
+            <Link href="/listproperty" color="inherit" underline="none">
+              <Typography variant="body1">List Property</Typography>
             </Link>
             <Link href="/buy-location" color="inherit" underline="none">
               <Typography variant="body1">By Location</Typography>
@@ -59,7 +59,7 @@ const Footer = () => {
                 <Typography variant="body1">About Us</Typography>
               </Link>
               <Link href="/blog" color="inherit" underline="none">
-                <Typography variant="body1">Blog</Typography>
+                <Typography variant="blog">Blog</Typography>
               </Link>
               <Link href="/careers" color="inherit" underline="none">
                 <Typography variant="body1">Careers</Typography>

@@ -44,6 +44,8 @@ import Footer from "./Footer";
 import ItemDetail from "./ItemDetail";
 
 
+import Getstarted from "./Getstarted";
+
 export default function App() {
 
 const[message, setmessage] = React.useState("")
@@ -100,7 +102,7 @@ const [isRegistered, setIsRegistered] = React.useState(false);
 
           <Route path="/blog" element={<Blog/>}></Route>
 
-
+          
           <Route path="/how-to-book" element={<Howtobook/>}></Route>
 
           <Route path="/listproperty" element={<Listing/>}></Route>
@@ -112,6 +114,14 @@ const [isRegistered, setIsRegistered] = React.useState(false);
           <Route path="/blog/:id" element={<BlogDetail />} />
 
           <Route path="/item/:name" element={<ItemDetail />} />
+
+          <Route path="/getstarted" element={<Getstarted/>}></Route>
+ 
+          
+           
+
+
+
 
         </Routes>
 

@@ -1,9 +1,32 @@
 import React, { useEffect, useRef } from 'react';
 import { Box, Typography, Button, Grid } from '@mui/material';
 
+import { useNavigate } from 'react-router-dom';
+
+
+
 const Mid = () => {
   const adRef = useRef(null);
   const textRef = useRef(null); // Ref for the text animation
+
+  const navigate = useNavigate();
+   function Getstarted() {
+
+  navigate('/getstarted')
+     
+
+
+
+
+
+    
+   }
+
+
+
+
+
+
 
   useEffect(() => {
     const screenWidth = window.innerWidth;
@@ -134,7 +157,7 @@ const Mid = () => {
       </Grid>
 
       <Box sx={{ marginTop: '40px', textAlign: 'center' }}> {/* Adjust margin-top */}
-        <Button variant="contained" color="error">
+        <Button onClick={Getstarted} variant="contained" color="error">
           Get started
         </Button>
       </Box>
