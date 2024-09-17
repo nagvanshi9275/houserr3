@@ -1,6 +1,3 @@
-
-
-
 import React from 'react';
 import { Container, Grid, Typography, Link, Box, IconButton } from '@mui/material';
 import YouTubeIcon from '@mui/icons-material/YouTube';
@@ -12,10 +9,10 @@ const Footer = () => {
   return (
     <Box 
       sx={{ 
-        background: 'linear-gradient(to right, #ff7e5f, #feb47b)', // Gradient background
+        backgroundColor: '#003366', // Dark blue background for a professional look
         color: 'white',
         width: "95.9vw", // Full width
-        ml: { xs: -3, sm: 4, md: -10 },
+        ml: { xs: -2, sm: -2, md: -10 },
         mt: 5,
         py: 6,
         mx: 'auto', // Center content horizontally
@@ -59,7 +56,7 @@ const Footer = () => {
                 <Typography variant="body1">About Us</Typography>
               </Link>
               <Link href="/blog" color="inherit" underline="none">
-                <Typography variant="blog">Blog</Typography>
+                <Typography variant="body1">Blog</Typography>
               </Link>
               <Link href="/careers" color="inherit" underline="none">
                 <Typography variant="body1">Careers</Typography>
