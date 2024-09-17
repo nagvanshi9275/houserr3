@@ -1,8 +1,7 @@
 
-   
 
-import React from "react";
-import { Card, CardContent, CardMedia, Typography, Grid, Container, Box } from "@mui/material";
+import React, { useState } from "react";
+import { Card, CardContent, CardMedia, Typography, Grid, Container, Box, TextField } from "@mui/material";
 import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
 import PriceChangeIcon from '@mui/icons-material/PriceChange';
@@ -12,11 +11,59 @@ export default function Getstarted() {
   // Flatten the locations data into a single array of items
   const items = homeData.flatMap(pre => pre.locations);
 
+  // State to handle the search input
+  const [searchQuery, setSearchQuery] = useState("");
+
+  // Filter items based on the search query
+  const filteredItems = items.filter(item =>
+    item.locationTitle.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   // Ensure we only show up to 16 items (4x4)
-  const limitedItems = items.slice(0, 16);
+  const limitedItems = filteredItems.slice(0, 16);
 
   return (
     <Container>
+      <Box my={4} textAlign="center">
+        <TextField
+          fullWidth
+          variant="outlined"
+          placeholder="Search by location title..."
+          onChange={(e) => setSearchQuery(e.target.value)}
+          value={searchQuery}
+          InputProps={{
+            startAdornment: (
+              <Box sx={{ mr: 1 }}>
+                <HomeIcon color="action" />
+              </Box>
+            ),
+            sx: {
+              backgroundColor: '#fff', // Light background color
+              color: '#000', // Dark text color
+              borderRadius: 2, // Rounded corners
+              padding: '8px 12px', // Padding for better appearance
+              '& .MuiInputBase-input': {
+                color: '#000' // Dark text color inside the input
+              },
+              '& .MuiInputLabel-root': {
+                color: '#000' // Dark color for the label
+              },
+              '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                  borderColor: '#000', // Dark border color
+                  borderWidth: '2px' // Increased border thickness
+                },
+                '&:hover fieldset': {
+                  borderColor: '#333', // Slightly lighter dark border color on hover
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: '#555', // Lighter dark border color when focused
+                },
+              }
+            }
+          }}
+        />
+      </Box>
       <Grid container spacing={2}>
         {limitedItems.map((pre1, index) => (
           <Grid item xs={12} sm={6} md={3} key={index}>
@@ -65,13 +112,6 @@ export default function Getstarted() {
     </Container>
   );
 }
-
-
-
-
-
-
-
 
 
 
