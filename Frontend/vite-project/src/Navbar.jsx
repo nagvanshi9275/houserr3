@@ -1,4 +1,3 @@
-
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -8,6 +7,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import ArrowDropDown from '@mui/icons-material/ArrowDropDown';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Drawer from '@mui/material/Drawer';
@@ -88,11 +88,7 @@ const NavBar = ({ isRegistered }) => {
             <ListItemText primary="How to Book" />
           </ListItem>
           <ListItem>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={() => navigate('/request-call')}
-            >
+            <Button variant="contained" color="primary" onClick={() => navigate('/request-call')}>
               Request Call
             </Button>
           </ListItem>
@@ -131,15 +127,20 @@ const NavBar = ({ isRegistered }) => {
             ) : (
               <Grid container alignItems="center" spacing={2} sx={{ flexGrow: 1, justifyContent: 'flex-end' }}>
                 <Grid item>
-                  <Button color="inherit" onClick={handleCityMenuOpen}>
+                  <Button color="inherit" onClick={handleCityMenuOpen} endIcon={<ArrowDropDown />}>
                     City
                   </Button>
                   {cityMenu}
                 </Grid>
                 <Grid item>
-                  <Button color="inherit" component={Link} to="/listproperty">
-                    ListProperty
-                  </Button>
+                  <Box sx={{ mt: 3 }}>
+                    <Button color="inherit" component={Link} to="/listproperty" sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', textAlign: 'center' }}>
+                      <Typography variant="body1">ListProperty</Typography>
+                      <Typography variant="caption" sx={{ color: 'red', mt: 0.5 }}>
+                        (Free)
+                      </Typography>
+                    </Button>
+                  </Box>
                 </Grid>
                 <Grid item>
                   <Button color="inherit" component={Link} to="/how-to-book">
@@ -162,11 +163,7 @@ const NavBar = ({ isRegistered }) => {
                   </IconButton>
                 </Grid>
                 <Grid item>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={() => navigate('/request-call')}
-                  >
+                  <Button variant="contained" color="primary" onClick={() => navigate('/request-call')}>
                     Request Call
                   </Button>
                 </Grid>
@@ -182,13 +179,3 @@ const NavBar = ({ isRegistered }) => {
 };
 
 export default NavBar;
-
-
-
-
-
-
-
-
-
-
