@@ -43,6 +43,8 @@ import Footer from "./Footer";
 
 import ItemDetail from "./ItemDetail";
 
+import Getstarted from "./Getstarted";
+
 
 export default function App() {
 
@@ -112,6 +114,8 @@ const [isRegistered, setIsRegistered] = React.useState(false);
           <Route path="/blog/:id" element={<BlogDetail />} />
 
           <Route path="/item/:name" element={<ItemDetail />} />
+
+          <Route path="/getstarted" element={<Getstarted/>}></Route>
 
         </Routes>
 
