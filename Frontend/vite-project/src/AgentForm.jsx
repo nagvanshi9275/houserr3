@@ -1,5 +1,10 @@
 
 
+
+
+
+
+
 import React, { useState } from "react";
 import {
   Grid,
@@ -10,17 +15,15 @@ import {
   Modal,
   IconButton,
 } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close"; // Importing Close icon
-import videoFile from "./WhatsApp Video 2024-08-31 at 00.53.36.mp4"; // Adjust the import path if necessary
+import CloseIcon from "@mui/icons-material/Close";
+import videoFile from "./WhatsApp Video 2024-08-31 at 00.53.36.mp4";
 
 export default function AgentForm() {
   const [isVideoVisible, setIsVideoVisible] = useState(false);
+  const [selectedButton, setSelectedButton] = useState(""); // State to manage which button is selected
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // You can add form validation and submission logic here
-
-    // Show the video popup
     setIsVideoVisible(true);
   };
 
@@ -47,11 +50,15 @@ export default function AgentForm() {
             fullWidth
             sx={{
               height: "56px",
-              backgroundColor: "#1976d2",
+              backgroundColor: selectedButton === "agent" ? "#1976d2" : "white",
+              color: selectedButton === "agent" ? "white" : "black",
+              border: `1px solid ${selectedButton === "agent" ? "#1976d2" : "black"}`, // Border color based on selection
               "&:hover": {
-                backgroundColor: "#115293",
+                border: "2px solid #1976d2",
               },
+              fontWeight: "bold", // Make the text bold
             }}
+            onClick={() => setSelectedButton("agent")}
           >
             Agent
           </Button>
@@ -62,11 +69,15 @@ export default function AgentForm() {
             fullWidth
             sx={{
               height: "56px",
-              backgroundColor: "#d32f2f",
+              backgroundColor: selectedButton === "owner" ? "#1976d2" : "white",
+              color: selectedButton === "owner" ? "white" : "black",
+              border: `1px solid ${selectedButton === "owner" ? "#1976d2" : "black"}`, // Border color based on selection
               "&:hover": {
-                backgroundColor: "#9a0007",
+                border: "2px solid #1976d2",
               },
+              fontWeight: "bold", // Make the text bold
             }}
+            onClick={() => setSelectedButton("owner")}
           >
             Owner
           </Button>
@@ -97,7 +108,6 @@ export default function AgentForm() {
             />
           </Grid>
 
-          {/* Submit Button */}
           <Grid item xs={12}>
             <Button
               type="submit"
@@ -126,7 +136,6 @@ export default function AgentForm() {
         </Grid>
       </Box>
 
-      {/* Video Popup */}
       <Modal
         open={isVideoVisible}
         onClose={handleClose}
@@ -170,7 +179,7 @@ export default function AgentForm() {
             autoPlay
             muted
             playsInline
-            onEnded={handleClose} // Close modal when video ends
+            onEnded={handleClose}
             sx={{
               display: "block",
             }}
@@ -183,6 +192,14 @@ export default function AgentForm() {
     </Box>
   );
 }
+
+
+
+
+
+
+
+
 
 
 
