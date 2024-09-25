@@ -1,10 +1,30 @@
-
-
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Typography, Box, Grid, Button, TextField } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
 
+import videoFile from "./WhatsApp Video 2024-08-31 at 00.53.36.mp4";
+
 export default function Spaceheader() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
+
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent default form submission
+    setIsSubmitted(true); // Update state to indicate form has been submitted
+    setShowVideo(true); // Show video when form is submitted
+  };
+
+  // Use effect to set a timer to hide the video after 5 seconds
+  useEffect(() => {
+    if (showVideo) {
+      const timer = setTimeout(() => {
+        setShowVideo(false);
+      }, 5000); // 5000 ms = 5 seconds
+
+      return () => clearTimeout(timer); // Cleanup timer on component unmount
+    }
+  }, [showVideo]);
+
   return (
     <Box sx={{ padding: "20px" }}>
       <Grid container spacing={2}>
@@ -23,8 +43,6 @@ export default function Spaceheader() {
               variant="p"
               component="p"
               sx={{
-                
-               
                 borderRadius: "4px",
                 display: "inline-block",
                 boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
@@ -50,6 +68,7 @@ export default function Spaceheader() {
               interior design in prime cities.
             </Typography>
 
+            {/* Address Section */}
             <Box
               sx={{
                 backgroundColor: "#e0f7fa",
@@ -96,6 +115,7 @@ export default function Spaceheader() {
               </Typography>
             </Box>
 
+            {/* Hosted by Section */}
             <Box
               sx={{
                 marginTop: "30px",
@@ -135,31 +155,19 @@ export default function Spaceheader() {
                 </Grid>
               </Grid>
             </Box>
-
-            <Box
-              sx={{
-                backgroundColor: "#e0e0e0",
-                padding: "20px",
-                borderRadius: "8px",
-                textAlign: "center",
-                marginTop: { xs: "20px", md: "0" },
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-              <Typography variant="h3">Hello</Typography>
-            </Box>
           </Box>
         </Grid>
 
         {/* Second Column */}
         <Grid item xs={12} md={4}>
           <Box
+            component="form"
+            onSubmit={handleSubmit}
             sx={{
               backgroundColor: "#e0e0e0",
               padding: "20px",
               borderRadius: "8px",
               textAlign: "center",
-              display: "block",
             }}
           >
             <Typography variant="h3">Hello</Typography>
@@ -210,76 +218,95 @@ export default function Spaceheader() {
                 on room occupation, personalized services, and additional features.
               </Typography>
             </Box>
-          </Box>
 
-          {/* New Box for "Next block" */}
-          <Box
-            sx={{
-              backgroundColor: "#fafafa", // Light background for contrast
-              padding: "20px",
-              borderRadius: "8px",
-              marginTop: "20px", // Space above the box
-              boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)", // Subtle shadow for depth
-            }}
-          >
-            <Typography
-              variant="h5"
-              sx={{
-                color: "#1976d2",
-                fontWeight: "bold",
-                marginBottom: "10px", // Space below the title
-              }}
-            >
-              Want to know more
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                color: "#333",
-                fontSize: "1.1rem",
-                lineHeight: "1.6",
-                marginBottom: "20px", // Space below the paragraph
-              }}
-            >
-              Leave your contact info, we will reach out shortly.
-            </Typography>
+            {/* Conditional Video Section */}
+            {showVideo ? (
+              <Box
+                sx={{
+                  marginTop: "20px",
+                  marginBottom: "20px",
+                  textAlign: "center",
+                }}
+              >
+                <video
+                  width="100%"
+                  height="auto"
+                  controls
+                  autoPlay
+                  style={{
+                    borderRadius: "8px",
+                    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                  }}
+                >
+                  <source src={videoFile} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </Box>
+            ) : (
+              <Box
+                sx={{
+                  backgroundColor: "#fafafa",
+                  padding: "20px",
+                  borderRadius: "8px",
+                  marginTop: "20px",
+                  boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+                }}
+              >
+                <Typography
+                  variant="h5"
+                  sx={{
+                    color: "#1976d2",
+                    fontWeight: "bold",
+                    marginBottom: "10px",
+                  }}
+                >
+                  Want to know more
+                </Typography>
+                <Typography
+                  variant="body1"
+                  sx={{
+                    color: "#333",
+                    fontSize: "1.1rem",
+                    lineHeight: "1.6",
+                    marginBottom: "20px",
+                  }}
+                >
+                  Leave your contact info, we will reach out shortly.
+                </Typography>
 
-            {/* Name and Phone Inputs */}
-            <TextField
-              label="Name"
-              fullWidth
-              sx={{ marginBottom: "20px" }}
-            />
-            <TextField
-              label="Phone"
-              fullWidth
-              sx={{ marginBottom: "20px" }}
-            />
+                {/* Name and Phone Inputs */}
+                <TextField
+                  label="Name"
+                  fullWidth
+                  sx={{ marginBottom: "20px" }}
+                  required
+                />
+                <TextField
+                  label="Phone"
+                  fullWidth
+                  sx={{ marginBottom: "20px" }}
+                  required
+                />
 
-            {/* Submit Button with Gradient Background */}
-            <Button
-              variant="contained"
-              fullWidth
-              sx={{
-                background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
-                color: "#fff",
-                padding: "10px",
-                borderRadius: "8px",
-              }}
-            >
-              Submit
-            </Button>
+                {/* Submit Button with Gradient Background */}
+                <Button
+                  type="submit"
+                  variant="contained"
+                  sx={{
+                    background: "linear-gradient(45deg, #1976d2 30%, #64b5f6 90%)",
+                    color: "white",
+                    '&:hover': {
+                      background: "linear-gradient(45deg, #64b5f6 30%, #1976d2 90%)",
+                    },
+                  }}
+                >
+                  Submit
+                </Button>
+              </Box>
+            )}
           </Box>
         </Grid>
       </Grid>
     </Box>
   );
 }
-
-
-
-
-
-
-
-
