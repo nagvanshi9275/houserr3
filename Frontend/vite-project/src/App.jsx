@@ -1,7 +1,6 @@
 
 
 
-
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Container, Typography } from '@mui/material';
@@ -125,10 +124,3 @@ const [isRegistered, setIsRegistered] = React.useState(false);
     </Router>
   );
 }
-
-
-
-
-
-
-

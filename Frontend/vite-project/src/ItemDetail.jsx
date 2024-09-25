@@ -1,19 +1,23 @@
 
 
-
-
-
 import React from "react";
+
 import { useParams } from "react-router-dom";
-import items from "./Finddata"; 
+
+import items from "./Finddata";
+
 import { Container, Typography, Grid } from "@mui/material";
 
 import Spaceheader from "./Spaceheader";
 
 import BedIcon from '@mui/icons-material/Bed';
+
 import BathtubIcon from '@mui/icons-material/Bathtub';
+
 import CarRentalIcon from '@mui/icons-material/CarRental';
+
 import WeekendIcon from '@mui/icons-material/Weekend';
+
 import PropaneTankIcon from '@mui/icons-material/PropaneTank';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 
