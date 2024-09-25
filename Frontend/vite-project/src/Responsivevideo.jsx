@@ -1,6 +1,8 @@
+
 import React, { useState, useEffect } from 'react';
 import { IconButton, TextField, Typography, Box, Grid, Card, CardContent, CardMedia } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import homeData from './homedata'; // Import your homeData from data.js
 
 const ResponsiveVideo = ({ src }) => {
@@ -8,6 +10,7 @@ const ResponsiveVideo = ({ src }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [searchTerm, setSearchTerm] = useState(''); // State for search input
   const [filteredData, setFilteredData] = useState([]); // Initially empty filteredData
+  const navigate = useNavigate(); // Initialize useNavigate
 
   useEffect(() => {
     setPlaceholders(['Search location', 'Find your area']);
@@ -37,6 +40,11 @@ const ResponsiveVideo = ({ src }) => {
 
       setFilteredData(filtered);
     }
+  };
+
+  // Function to handle card click and navigate
+  const handleCardClick = (cityName, locationTitle) => {
+    navigate(`/house/${cityName}/${locationTitle}`); // Navigate to the specific route
   };
 
   return (
@@ -152,7 +160,7 @@ const ResponsiveVideo = ({ src }) => {
               <Grid container spacing={2}>
                 {city.locations.map((location, locIndex) => (
                   <Grid item xs={12} sm={6} md={4} key={locIndex}>
-                    <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }} onClick={() => handleCardClick(city.cityName, location.locationTitle)}>
                       <CardMedia
                         component="img"
                         image={location.houseImages[0]} // Display first house image
@@ -183,3 +191,12 @@ const ResponsiveVideo = ({ src }) => {
 };
 
 export default ResponsiveVideo;
+
+
+
+
+
+
+
+
+
